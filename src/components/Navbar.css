@@ -1,0 +1,34 @@
+.Navbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--grey);
+  color: #eeeeee;
+}
+
+.Navbar .container {
+  padding: 1rem;
+  display: flex;
+  max-width: 1080px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Navbar ul {
+  display: flex;
+  text-decoration: none;
+  width: 250px;
+  justify-content: space-around;
+}
+
+.Navbar li {
+  list-style: none;
+}
+
+@media screen and (max-width: 600px) {
+  .Navbar h1 {
+    font-size: 1rem;
+  }
+}

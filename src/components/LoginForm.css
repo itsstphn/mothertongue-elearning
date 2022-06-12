@@ -1,0 +1,63 @@
+.login-form {
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  /* text-align: center;  */
+  /* width: 100%; */
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--grey);
+  margin: 1rem;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  width: 350px;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--light-green);
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.login-form label {
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--grey);
+}
+
+.login-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fff;
+  font-family: "Comic Neue", cursive;
+  margin-left: 20px;
+  font-size: 1rem;
+}
+
+.login-form button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  background-color: var(--grey);
+  color: #eee;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.login-form button:hover {
+  background-color: var(--dark-grey);
+}
