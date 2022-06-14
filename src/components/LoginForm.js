@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const LoginForm = ({ loginType, setUser }) => {
   const navigate = useNavigate();
@@ -29,7 +29,9 @@ const LoginForm = ({ loginType, setUser }) => {
 
   return (
     <div className="login-form">
-      <h2>Login as {loginType}</h2>
+      <h2>
+        Login bilang {loginType === "Teacher" ? "Manunudlo" : "Estudyante"}
+      </h2>
       <form onSubmit={handleSubmit}>
         <label>
           Username
@@ -53,6 +55,11 @@ const LoginForm = ({ loginType, setUser }) => {
           <button type="submit">Login</button>
         </div>
       </form>
+      <Link
+        to={loginType === "Teacher" ? "/teacher-signup" : "/student-signup"}
+      >
+        <div className="btn-create-account">Gusto Ko Maghimo Account</div>
+      </Link>
     </div>
   );
 };

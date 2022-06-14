@@ -1,0 +1,61 @@
+.HomeStudent {
+  /* width: 100vw; */
+  overflow-x: hidden;
+}
+
+.HomeStudent .container {
+  max-width: 1200px;
+  display: grid;
+  place-items: center;
+}
+
+.HomeStudent .pointsContainer {
+  width: 300px;
+  padding: 1rem;
+  justify-self: end;
+  display: flex;
+}
+
+.HomeStudent .points {
+  width: 100px;
+}
+
+.HomeStudent .points p {
+  font-size: 1.2rem;
+}
+
+.HomeStudent .home-icon {
+  font-size: 1.2rem;
+}
+
+.HomeStudent .menu {
+  padding: 0 5rem;
+  display: grid;
+  /* place-items: center; */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3rem;
+}
+
+.HomeStudent img {
+  width: 250px;
+  align-self: center;
+  border-radius: 25px;
+}
+
+.HomeStudent .menu > div {
+  /* padding-top: 1rem; */
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 270px;
+  height: 230px;
+  text-align: center;
+  background-color: var(--light-green);
+}
+
+.HomeStudent h3 {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+}

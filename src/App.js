@@ -1,11 +1,15 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
+
 import LoginAs from "./pages/LoginAs";
 import StudentLogin from "./pages/StudentLogin";
 import TeacherLogin from "./pages/TeacherLogin";
 import { useState } from "react";
+import HomeTeacher from "./pages/HomeTeacher";
+import HomeStudent from "./pages/HomeStudent";
+import TeacherSignup from "./pages/TeacherSignup";
+import StudentSignup from "./pages/StudentSignup";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -17,7 +21,11 @@ function App() {
           path="/"
           element={
             user ? (
-              <Home setUser={setUser}></Home>
+              user === "teachermary" ? (
+                <HomeTeacher setUser={setUser}></HomeTeacher>
+              ) : (
+                <HomeStudent></HomeStudent>
+              )
             ) : (
               <Navigate to="/login-as"></Navigate>
             )
@@ -29,8 +37,16 @@ function App() {
           element={<TeacherLogin setUser={setUser}></TeacherLogin>}
         ></Route>
         <Route
+          path="/teacher-signup"
+          element={<TeacherSignup setUser={setUser}></TeacherSignup>}
+        ></Route>
+        <Route
           path="/student-login"
           element={<StudentLogin setUser={setUser}></StudentLogin>}
+        ></Route>
+        <Route
+          path="/student-signup"
+          element={<StudentSignup setUser={setUser}></StudentSignup>}
         ></Route>
       </Routes>
     </BrowserRouter>

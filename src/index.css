@@ -3,6 +3,8 @@ body {
   font-family: "Comic Neue", cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--peach);
+  color: var(--dark-grey);
 }
 
 code {
