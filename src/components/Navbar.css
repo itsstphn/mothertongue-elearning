@@ -16,10 +16,17 @@
   align-items: center;
 }
 
+.Navbar .left-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+}
+
 .Navbar ul {
   display: flex;
   text-decoration: none;
-  width: 250px;
+  width: 180px;
   justify-content: space-around;
 }
 
@@ -27,8 +34,33 @@
   list-style: none;
 }
 
-@media screen and (max-width: 600px) {
+.Navbar .user {
+  margin-left: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Navbar .logout-btn {
+  background-color: var(--dark-grey);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 778px) {
   .Navbar h1 {
     font-size: 1rem;
+  }
+
+  .Navbar ul {
+    display: none;
+  }
+
+  .Navbar .left-nav {
+    justify-content: end;
+    width: fit-content;
   }
 }

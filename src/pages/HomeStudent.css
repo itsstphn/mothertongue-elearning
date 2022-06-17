@@ -1,6 +1,6 @@
 .HomeStudent {
   /* width: 100vw; */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .HomeStudent .container {
@@ -58,4 +58,18 @@
 .HomeStudent h3 {
   margin-top: 0.5rem;
   font-size: 1.5rem;
+}
+
+@media screen and (max-width: 778px) {
+  .HomeStudent .pointsContainer {
+    width: fit-content;
+    justify-content: end;
+  }
+
+  .HomeStudent .menu {
+    grid-template-columns: 1fr;
+    grid-template-rows: unset;
+    padding: 0 3rem;
+    padding-bottom: 3rem;
+  }
 }

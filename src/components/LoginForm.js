@@ -1,30 +1,18 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
 import { useNavigate, Link } from "react-router-dom";
+import useSignin from "./../hooks/useSignin";
 
 const LoginForm = ({ loginType, setUser }) => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+
+  const { signin, error, isPending } = useSignin();
+
   const handleSubmit = (e) => {
-    setError(null);
     e.preventDefault();
-    if (loginType === "Teacher") {
-      if (username === "teachermary" && password === "teacher123") {
-        setUser(username);
-        navigate("/");
-      } else {
-        setError("Username or Password is wrong!");
-      }
-    } else if (loginType === "Student") {
-      if (username === "studentmary" && password === "student123") {
-        setUser(username);
-        navigate("/");
-      } else {
-        setError("Username or Password is wrong!");
-      }
-    }
+    signin(email, password);
   };
 
   return (
@@ -36,8 +24,8 @@ const LoginForm = ({ loginType, setUser }) => {
         <label>
           Username
           <input
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             type="text"
           />
         </label>
@@ -55,9 +43,7 @@ const LoginForm = ({ loginType, setUser }) => {
           <button type="submit">Login</button>
         </div>
       </form>
-      <Link
-        to={loginType === "Teacher" ? "/teacher-signup" : "/student-signup"}
-      >
+      <Link to="/signup">
         <div className="btn-create-account">Gusto Ko Maghimo Account</div>
       </Link>
     </div>

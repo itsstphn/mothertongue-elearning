@@ -1,5 +1,5 @@
 .signup-form {
-  min-height: 500px;
+  min-height: 550px;
   display: flex;
   flex-direction: column;
   /* padding: 3rem; */
@@ -13,13 +13,13 @@
   font-size: 2rem;
   text-align: center;
   color: var(--grey);
-  margin: 1rem;
+  margin-bottom: 1rem;
 }
 
 .signup-form form {
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: 400px;
   width: 350px;
   align-items: center;
   justify-content: center;
@@ -30,15 +30,25 @@
 }
 
 .signup-form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   font-size: 1.2rem;
   font-weight: bold;
   color: var(--grey);
 }
 
+.signup-form .label-text {
+  text-align: start;
+  height: fit-content;
+  width: 100px;
+}
+
 .signup-form input {
   padding: 10px;
   border: none;
+  width: 186px;
   border-radius: 8px;
   outline: none;
   background-color: #fff;
@@ -60,4 +70,27 @@
 
 .signup-form button:hover {
   background-color: var(--dark-grey);
+}
+
+.signup-form .select-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  /* margin: 0 auto; */
+}
+
+.signup-form select {
+  width: 180px;
+  padding: 0.4rem 1rem;
+  font-family: inherit;
+  border-radius: 10px;
+  height: 40px;
+  border: none;
+}
+
+.signup-form select:focus {
+  outline: none;
 }
