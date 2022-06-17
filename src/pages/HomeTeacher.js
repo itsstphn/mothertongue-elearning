@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const HomeTeacher = ({ setUser }) => {
+const HomeTeacher = () => {
   return (
     <div className="HomeTeacher">
       <div className="container">

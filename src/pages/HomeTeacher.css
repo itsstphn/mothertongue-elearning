@@ -54,3 +54,28 @@
   margin: 0.5rem;
   font-size: 1.3rem;
 }
+
+@media screen and (max-width: 778px) {
+  .HomeTeacher {
+    padding: 1rem;
+  }
+
+  .HomeTeacher .student-table {
+    width: fit-content;
+    margin: 1rem 0;
+    font-size: 0.7rem;
+  }
+
+  .HomeTeacher .container {
+    grid-template-columns: 1fr;
+  }
+
+  .HomeTeacher .row {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .HomeTeacher .row div {
+    width: 100%;
+    padding: 0.2rem 0.5rem;
+  }
+}
