@@ -1,0 +1,8 @@
+.LessonVoiceover {
+    padding: 2rem;
+}
+
+.LessonVoiceover .category-card {
+    width: fit-content;
+    height: 80px;
+}

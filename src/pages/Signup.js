@@ -9,7 +9,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("student");
 
-  const { signup } = useSignup();
+  const { signup, error, isPending } = useSignup();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,9 +47,11 @@ const Signup = () => {
         <label>
           <p className="label-text">Email</p>
           <input
+            autocorrect="off"
+            autocapitalize="none"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            type="text"
+            type="email"
           />
         </label>
 
@@ -72,7 +74,9 @@ const Signup = () => {
           </select>
         </label>
         <div>
-          <button type="submit">Himo Account</button>
+          <button disabled={isPending} type="submit">
+            Himo Account
+          </button>
         </div>
       </form>
     </div>

@@ -1,15 +1,33 @@
 .HomeStudent {
-  /* width: 100vw; */
-  /* overflow-x: hidden; */
+    display: grid;
+    place-items: center;
+    height: 88vh;
 }
 
 .HomeStudent .container {
-  max-width: 1200px;
-  display: grid;
-  place-items: center;
+    max-width: 1200px;
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
 }
 
-.HomeStudent .pointsContainer {
+.HomeStudent .card-item {
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.HomeStudent .card-item:last-child {
+    grid-column: 1 / span 2;
+}
+
+.HomeStudent .card-text {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* .HomeStudent .pointsContainer {
   width: 300px;
   padding: 1rem;
   justify-self: end;
@@ -31,7 +49,7 @@
 .HomeStudent .menu {
   padding: 0 5rem;
   display: grid;
-  /* place-items: center; */
+
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 3rem;
@@ -44,7 +62,7 @@
 }
 
 .HomeStudent .menu > div {
-  /* padding-top: 1rem; */
+
   border-radius: 30px;
   display: flex;
   flex-direction: column;
@@ -72,4 +90,4 @@
     padding: 0 3rem;
     padding-bottom: 3rem;
   }
-}
+} */
