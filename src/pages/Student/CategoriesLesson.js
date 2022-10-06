@@ -6,6 +6,8 @@ import "./CategoriesLesson.css";
 const CategoriesLesson = () => {
     const { level } = useParams();
 
+    console.log(level);
+
     const gradeLevel = level.replace("grade-", "");
 
     const categories = [

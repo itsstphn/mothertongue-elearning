@@ -1,14 +1,12 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Navbar from "./layout/Navbar";
-
+import React from "react";
 import LoginAs from "./pages/LoginAs";
 import StudentLogin from "./pages/StudentLogin";
 import TeacherLogin from "./pages/TeacherLogin";
-
 import HomeTeacher from "./pages/Teacher/HomeTeacher";
 import HomeStudent from "./pages/Student/HomeStudent";
-
 import Signup from "./pages/Signup";
 import { useAuthContext } from "./hooks/useAuthContext";
 import Home from "./pages/Home";
@@ -18,11 +16,11 @@ import LessonVoiceover from "./pages/Student/LessonVoiceover";
 function App() {
     const { user, userType, authIsReady } = useAuthContext();
 
-    console.log(userType);
+    console.log(user);
     return (
         <BrowserRouter className="App">
             {authIsReady && (
-                <>
+                <React.Fragment>
                     <Navbar></Navbar>
                     <Routes>
                         <Route
@@ -49,10 +47,12 @@ function App() {
                             path="/lesson/:lessonCategory"
                             element={<LessonVoiceover></LessonVoiceover>}
                         ></Route>
-                        <Routes
+
+                        <Route
                             path="/teacher-home"
                             element={<HomeTeacher></HomeTeacher>}
-                        ></Routes>
+                        ></Route>
+
                         <Route
                             path="/login-as"
                             element={
@@ -68,7 +68,7 @@ function App() {
                             path="/teacher-login"
                             element={
                                 user ? (
-                                    <Navigate to={"/"}></Navigate>
+                                    <Navigate to="/"></Navigate>
                                 ) : (
                                     <TeacherLogin></TeacherLogin>
                                 )
@@ -79,7 +79,7 @@ function App() {
                             path="/student-login"
                             element={
                                 user ? (
-                                    <Navigate to={"/"}></Navigate>
+                                    <Navigate to="/"></Navigate>
                                 ) : (
                                     <StudentLogin></StudentLogin>
                                 )
@@ -89,14 +89,14 @@ function App() {
                             path="/signup"
                             element={
                                 user ? (
-                                    <Navigate to={"/"}></Navigate>
+                                    <Navigate to="/"></Navigate>
                                 ) : (
                                     <Signup></Signup>
                                 )
                             }
                         ></Route>
                     </Routes>
-                </>
+                </React.Fragment>
             )}
         </BrowserRouter>
     );

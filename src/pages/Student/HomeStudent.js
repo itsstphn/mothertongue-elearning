@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import _ from "lodash";
 
 const HomeStudent = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const cards = [
         { name: "grade 1", path: "/category/grade-1" },
