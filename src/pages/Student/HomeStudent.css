@@ -1,93 +1,81 @@
 .HomeStudent {
-    display: grid;
-    place-items: center;
-    height: 88vh;
+  display: grid;
+  place-items: center;
+  height: 88vh;
 }
 
 .HomeStudent .container {
-    max-width: 1200px;
-    display: grid;
-    place-items: center;
-    gap: 2rem;
-    grid-template-columns: 1fr 1fr;
-}
-
-.HomeStudent .card-item {
-    height: 200px;
-    width: 200px;
-    cursor: pointer;
-}
-
-.HomeStudent .card-item:last-child {
-    grid-column: 1 / span 2;
-}
-
-.HomeStudent .card-text {
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-/* .HomeStudent .pointsContainer {
-  width: 300px;
-  padding: 1rem;
-  justify-self: end;
-  display: flex;
-}
-
-.HomeStudent .points {
-  width: 100px;
-}
-
-.HomeStudent .points p {
-  font-size: 1.2rem;
-}
-
-.HomeStudent .home-icon {
-  font-size: 1.2rem;
-}
-
-.HomeStudent .menu {
-  padding: 0 5rem;
+  max-width: 1200px;
   display: grid;
-
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 3rem;
+  place-items: center;
 }
 
-.HomeStudent img {
-  width: 250px;
-  align-self: center;
-  border-radius: 25px;
+.HomeStudent .card-content {
+  width: 700px;
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
 }
 
-.HomeStudent .menu > div {
-
-  border-radius: 30px;
+.HomeStudent .tabs {
+  /* height: 100%; */
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 270px;
-  height: 230px;
+  justify-content: space-between;
+  align-items: center;
+  /* al */
+}
+
+.HomeStudent .tabs .tab-item {
+  height: 100%;
+  display: grid;
+  width: 100%;
+  place-items: center;
+  cursor: pointer;
+}
+
+.HomeStudent .tab-item p {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #272d2d;
+}
+
+.HomeStudent .tab-item:hover {
+}
+
+.HomeStudent .tab-item:hover:not(.active) p {
+  font-size: 1.2rem;
+}
+
+.HomeStudent .tab-item.active {
+  background-color: #335a17;
+  border-radius: 10px;
+}
+
+.HomeStudent .tab-item.active p {
+  color: white;
+}
+
+.HomeStudent .tab-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
   text-align: center;
-  background-color: var(--light-green);
 }
 
-.HomeStudent h3 {
-  margin-top: 0.5rem;
-  font-size: 1.5rem;
+.HomeStudent .group-number {
+  border: 1px solid grey;
+  height: 30px;
+  border-radius: 5px;
 }
 
-@media screen and (max-width: 778px) {
-  .HomeStudent .pointsContainer {
-    width: fit-content;
-    justify-content: end;
-  }
+.HomeStudent .group-number p {
+  cursor: pointer;
+  line-height: 30px;
+}
 
-  .HomeStudent .menu {
-    grid-template-columns: 1fr;
-    grid-template-rows: unset;
-    padding: 0 3rem;
-    padding-bottom: 3rem;
-  }
-} */
+.HomeStudent .group-number p:hover {
+  font-weight: bold;
+}

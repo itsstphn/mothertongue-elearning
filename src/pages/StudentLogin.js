@@ -47,6 +47,7 @@ const StudentLogin = ({ setUser }) => {
                     Gusto Ko Maghimo Account
                 </div>
             </Link>
+            
         </div>
     );
 };

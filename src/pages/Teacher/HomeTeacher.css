@@ -10,6 +10,18 @@
   gap: 2rem;
 }
 
+.HomeTeacher .title-container {
+  width: 350px;
+  height: 70px;
+}
+
+.HomeTeacher .student-list h2 {
+  color: var(--dark-grey);
+  background-color: var(--light-green);
+  width: fit-content;
+  text-align: center;
+}
+
 .HomeTeacher .student-table {
   background-color: var(--light-green);
   border-radius: 10px;

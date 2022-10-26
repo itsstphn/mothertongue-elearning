@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Signup.css";
 import { useSignup } from "./../hooks/useSignup";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("");
@@ -21,7 +22,7 @@ const Signup = () => {
       <h2>Himo account</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          <p className="label-text">First Name</p>
+          <p className="label-text">Pangalan</p>
           <input
             value={firstName}
             onChange={(e) =>
@@ -33,7 +34,7 @@ const Signup = () => {
           />
         </label>
         <label>
-          <p className="label-text">Last Name</p>
+          <p className="label-text">Apelyido</p>
           <input
             value={lastName}
             onChange={(e) =>
@@ -77,6 +78,9 @@ const Signup = () => {
           <button disabled={isPending} type="submit">
             Himo Account
           </button>
+          <Link to="/">
+            <p className="redirect-login">Maglogin</p>{" "}
+          </Link>
         </div>
       </form>
     </div>

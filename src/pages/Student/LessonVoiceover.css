@@ -1,8 +1,90 @@
 .LessonVoiceover {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .LessonVoiceover .category-card {
-    width: fit-content;
-    height: 80px;
+  width: fit-content;
+  height: 80px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.LessonVoiceover .category-card p {
+  font-weight: bold;
+}
+
+.LessonVoiceover .main-lesson {
+  width: 75%;
+  height: 70vh;
+  margin: 0 auto;
+}
+
+.LessonVoiceover .main-lesson-container {
+  padding: 1rem 0;
+  /* margin: 2rem 0; */
+  overflow-y: auto;
+  height: 100%;
+}
+
+.LessonVoiceover .main-lesson-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.LessonVoiceover .main-lesson-container::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+.LessonVoiceover .main-lesson-container::-webkit-scrollbar-thumb {
+  background-color: #32a743;
+  border-radius: 100px;
+}
+
+.LessonVoiceover .topic-img {
+  height: 100px;
+}
+
+.LessonVoiceover .row {
+  display: flex;
+  margin: 1rem;
+  margin-top: 0;
+  height: 104px;
+}
+
+.LessonVoiceover .row:first-child {
+  height: 30px;
+  display: grid;
+  margin: 0;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+}
+
+.LessonVoiceover .row:first-child p {
+  font-weight: bold;
+}
+
+.LessonVoiceover .image-container {
+  width: 300px;
+  text-align: center;
+  flex: 1;
+}
+
+.LessonVoiceover .description-container {
+  flex: 1;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+.LessonVoiceover .description-container p {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.LessonVoiceover .voiceover-container {
+  flex: 1;
+  margin-left: 3rem;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 2fr;
 }

@@ -6,15 +6,17 @@ import "./CategoriesLesson.css";
 const CategoriesLesson = () => {
     const { level } = useParams();
 
-    console.log(level);
+  
 
     const gradeLevel = level.replace("grade-", "");
 
+    console.log(gradeLevel)
+
     const categories = [
-        { name: "numero", path: `/lesson/numero` },
-        { name: "tinaga", path: `${gradeLevel}/lesson/tinaga` },
-        { name: "letra", path: `${gradeLevel}/lesson/letra` },
-        { name: "pahampang", path: `${gradeLevel}/lesson/pahampang` },
+        { name: "numero", path: `lesson/numero` },
+        { name: "tinaga", path: `lesson/tinaga` },
+        { name: "letra", path: `lesson/letra` },
+        { name: "pahampang", path: `lesson/pahampang` },
     ];
 
     return (

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useSignin from "../hooks/useSignin";
-import LoginForm from "./../components/form/LoginForm";
+
 
 const TeacherLogin = ({ setUser }) => {
     const [email, setEmail] = useState("");
@@ -16,7 +16,7 @@ const TeacherLogin = ({ setUser }) => {
 
     return (
         <div className="login-form">
-            <h2>Login bilang Teacher</h2>
+            <h2>Login bilang Maestra</h2>
             <form onSubmit={handleSubmit}>
                 <label>
                     Email
