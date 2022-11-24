@@ -1,90 +1,144 @@
 .LessonVoiceover {
   padding: 2rem;
-}
-
-.LessonVoiceover .category-card {
-  width: fit-content;
-  height: 80px;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-.LessonVoiceover .category-card p {
-  font-weight: bold;
-}
-
-.LessonVoiceover .main-lesson {
-  width: 75%;
-  height: 70vh;
-  margin: 0 auto;
-}
-
-.LessonVoiceover .main-lesson-container {
-  padding: 1rem 0;
-  /* margin: 2rem 0; */
-  overflow-y: auto;
+  background: no-repeat center center / cover;
   height: 100%;
+  width: 100vw;
 }
 
-.LessonVoiceover .main-lesson-container::-webkit-scrollbar {
-  width: 12px;
+.numero-bg {
+  background-image: url("../../assets/images/numero-lesson-bg.jpg");
 }
 
-.LessonVoiceover .main-lesson-container::-webkit-scrollbar-track {
-  background-color: #e4e4e4;
-  border-radius: 100px;
+.LessonVoiceover .card-content {
+  padding: 2rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(5, 1fr);
+  width: 100%;
+  column-gap: 4rem;
+  /* row-gap: 1rem; */
 }
 
-.LessonVoiceover .main-lesson-container::-webkit-scrollbar-thumb {
-  background-color: #32a743;
-  border-radius: 100px;
+.LessonVoiceover .topic {
+  height: 70px;
+  aspect-ratio: 1;
+  justify-self: center;
+  /* height: auto; */
 }
 
 .LessonVoiceover .topic-img {
-  height: 100px;
+  width: 100%;
+  height: 100%;
 }
 
-.LessonVoiceover .row {
+.LessonVoiceover .list-item {
   display: flex;
-  margin: 1rem;
-  margin-top: 0;
-  height: 104px;
-}
-
-.LessonVoiceover .row:first-child {
-  height: 30px;
-  display: grid;
-  margin: 0;
-  grid-template-columns: 1fr 1fr 1fr;
-  place-items: center;
-}
-
-.LessonVoiceover .row:first-child p {
-  font-weight: bold;
-}
-
-.LessonVoiceover .image-container {
-  width: 300px;
+  justify-content: center;
   text-align: center;
-  flex: 1;
 }
 
-.LessonVoiceover .description-container {
-  flex: 1;
-  text-align: center;
-  display: grid;
-  place-items: center;
-}
-
-.LessonVoiceover .description-container p {
-  font-weight: bold;
+.LessonVoiceover .list-item p {
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.LessonVoiceover .voiceover-container {
-  flex: 1;
-  margin-left: 3rem;
+.LessonVoiceover .topic {
+  /* width: 20px; */
   display: grid;
   place-items: center;
-  grid-template-columns: 1fr 2fr;
+}
+
+.LessonVoiceover .description {
+  width: 120px;
+  /* height: 40px; */
+  display: grid;
+  place-items: center;
+  background: url("../../assets/images/header-bg.png") no-repeat center center /
+    contain;
+}
+
+.LessonVoiceover .description p {
+  color: #fff;
+  user-select: none;
+}
+
+.LessonVoiceover .player {
+  width: 250px;
+}
+
+.LessonVoiceover .player audio {
+  width: 242px;
+  height: 40px;
+}
+
+.LessonVoiceover .test {
+  margin-bottom: -35px;
+  margin-top: 1rem;
+}
+
+.LessonVoiceover .test button {
+  font-family: "Comic Neue", cursive;
+  background-color: var(--dark-grey);
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  height: 40px;
+  width: 300px;
+  cursor: pointer;
+}
+
+.LessonVoiceover .test button:hover {
+  scale: 1.1;
+}
+
+@media only screen and (max-width: 1080px) {
+  .LessonVoiceover .card-content {
+    padding: 1rem;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+    width: 100%;
+    column-gap: 4rem;
+    row-gap: 1rem;
+    max-height: 70vh;
+  }
+
+  .LessonVoiceover .list-item {
+    display: grid;
+    max-width: 500px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    justify-content: unset;
+    margin-bottom: 1rem;
+  }
+
+  /* .LessonVoiceover .topic {
+    width: 100%;
+  } */
+
+  .LessonVoiceover .topic p {
+    font-size: 1.5rem;
+  }
+
+  .LessonVoiceover .description {
+    margin-right: 1.5rem;
+  }
+
+  .LessonVoiceover .description p {
+    white-space: nowrap;
+  }
+
+  .LessonVoiceover .player {
+    grid-column: 1 / span 2;
+  }
+
+  .LessonVoiceover .test button:hover {
+    scale: unset;
+  }
+
+  .LessonVoiceover .test button:active {
+    scale: 1.1;
+  }
 }

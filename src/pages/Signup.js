@@ -79,7 +79,7 @@ const Signup = () => {
             Himo Account
           </button>
           <Link to="/">
-            <p className="redirect-login">Maglogin</p>{" "}
+            <p className="redirect-login">Maglogin</p>
           </Link>
         </div>
       </form>

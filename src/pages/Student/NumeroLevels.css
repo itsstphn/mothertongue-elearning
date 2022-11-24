@@ -1,0 +1,99 @@
+.NumeroLevels {
+  background-color: var(--light-green);
+  padding: 5px;
+}
+
+.NumeroLevels .container {
+  margin: 0 auto;
+  margin-top: 10px;
+  border: 5px solid white;
+  position: relative;
+  width: 350px;
+  height: 870px;
+  background: url("../../assets/images/numero-bg.jpeg") no-repeat center center /
+    cover;
+}
+
+.NumeroLevels .level-header#level-header {
+  background: url("../../assets/images/header-bg2.png") no-repeat center center /
+    contain;
+  margin-top: 10px;
+  margin-left: 100px;
+  display: grid;
+  width: 150px;
+  height: 70px;
+  place-items: center;
+}
+
+.NumeroLevels .level-header#level-header span {
+  font-size: 24px;
+}
+
+.NumeroLevels .level--1-10 {
+  margin-top: 80px;
+  margin-left: 40px;
+}
+.NumeroLevels .level--11-20 {
+  margin-top: 150px;
+  margin-left: 70px;
+}
+
+.NumeroLevels .level--21-30 {
+  margin-top: 210px;
+  margin-left: 170px;
+}
+
+.NumeroLevels .level--31-40 {
+  margin-top: 300px;
+  margin-left: 220px;
+}
+
+.NumeroLevels .level--41-50 {
+  margin-top: 380px;
+  margin-left: 190px;
+}
+
+.NumeroLevels .level--51-60 {
+  margin-top: 450px;
+  margin-left: 120px;
+}
+
+.NumeroLevels .level--61-70 {
+  margin-top: 510px;
+  margin-left: 70px;
+}
+
+.NumeroLevels .level--71-80 {
+  margin-top: 580px;
+  margin-left: 100px;
+}
+
+.NumeroLevels .level--81-90 {
+  margin-top: 630px;
+  margin-left: 170px;
+}
+
+.NumeroLevels .level--91-100 {
+  margin-top: 700px;
+  margin-left: 220px;
+}
+
+.NumeroLevels [class^="level"] {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  background: url("../../assets/images/level-bg.png") no-repeat center center /
+    contain;
+  width: 90px;
+  height: 55px;
+  user-select: none;
+}
+
+.NumeroLevels [class^="level"]:active:not([class^="level-header"]) {
+  scale: 1.1;
+}
+
+.NumeroLevels [class^="level"] span {
+  font-weight: bold;
+  color: white;
+}

@@ -27,6 +27,11 @@ export const useSignup = () => {
         userType: userType,
         firstName: firstName,
         lastName: lastName,
+        progress: {
+          numero: ["1-10"],
+          letra: ["A-E"],
+          tinaga: [],
+        },
       });
 
       dispatch({ type: "SIGNIN", payload: response.user });

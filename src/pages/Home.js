@@ -5,23 +5,31 @@ import HomeStudent from "./Student/HomeStudent";
 import HomeTeacher from "./Teacher/HomeTeacher";
 
 const Home = () => {
-    const { userType, authIsReady } = useAuthContext();
+  const { userType, authIsReady } = useAuthContext();
 
-    return (
+  return (
+    <>
+      {authIsReady && (
         <>
-            {authIsReady && (
-                <>
-                    {userType === "teacher" ? (
-                        <HomeTeacher></HomeTeacher>
-                    ) : userType === "student" ? (
-                        <HomeStudent></HomeStudent>
-                    ) : (
-                        <div>Loading...</div>
-                    )}
-                </>
-            )}
+          {
+            userType === "teacher" ? (
+              <HomeTeacher></HomeTeacher>
+            ) : (
+              // userType === "student" ?
+              // (
+              <HomeStudent></HomeStudent>
+            )
+            // )
+            // :
+
+            // (
+            //     <div>Loading...</div>
+            // )
+          }
         </>
-    );
+      )}
+    </>
+  );
 };
 
 export default Home;

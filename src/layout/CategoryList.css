@@ -1,0 +1,23 @@
+.CategoryList .tab-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 240px;
+  gap: 1.4rem;
+  text-align: center;
+}
+
+.HomeStudent .group {
+  border: 1px solid grey;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.HomeStudent .group p {
+  cursor: pointer;
+  line-height: 30px;
+}
+
+.HomeStudent .group p:hover {
+  font-weight: bold;
+}

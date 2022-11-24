@@ -10,8 +10,9 @@ import HomeStudent from "./pages/Student/HomeStudent";
 import Signup from "./pages/Signup";
 import { useAuthContext } from "./hooks/useAuthContext";
 import Home from "./pages/Home";
-import CategoriesLesson from "./pages/Student/CategoriesLesson";
 import LessonVoiceover from "./pages/Student/LessonVoiceover";
+import Quiz from "./pages/Student/Quiz";
+import NumeroLevels from "./pages/Student/NumeroLevels";
 
 function App() {
   const { user, userType, authIsReady } = useAuthContext();
@@ -37,12 +38,18 @@ function App() {
               ></Route>
 
               <Route
-                path="/category/:level"
-                element={<CategoriesLesson></CategoriesLesson>}
+                path="/numero-levels"
+                element={<NumeroLevels></NumeroLevels>}
               ></Route>
+
               <Route
-                path="/category/:level/lesson/:lessonCategory"
+                path="/:category/:subCategory"
                 element={<LessonVoiceover></LessonVoiceover>}
+              ></Route>
+
+              <Route
+                path="/:category/:subCategory/quiz"
+                element={<Quiz></Quiz>}
               ></Route>
 
               <Route

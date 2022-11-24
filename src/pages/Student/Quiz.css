@@ -1,0 +1,31 @@
+.Quiz {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.Quiz .card-container {
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.Quiz .card-content {
+  border-radius: 20px;
+  background: url("../../assets/images/mary.jpg") no-repeat center bottom /
+    cover;
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+  .Quiz .card-container {
+    width: 250px;
+    height: 400px;
+  }
+
+  .Quiz .message {
+    height: 40px;
+    text-align: center;
+  }
+}
