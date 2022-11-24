@@ -27,7 +27,11 @@ const NumeroLevels = () => {
             </div>
             {lessons.numero.map((item) => (
               <div
-                onClick={() => handleLevelClick(item.category)}
+                onClick={() => {
+                  progress &&
+                    progress.numero.includes(item.category) &&
+                    handleLevelClick(item.category);
+                }}
                 key={item.category}
                 className={`level--${item.category}`}
               >
