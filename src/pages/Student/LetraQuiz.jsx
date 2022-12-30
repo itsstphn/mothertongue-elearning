@@ -181,14 +181,14 @@ const LetraQuiz = () => {
                 </button>
               </div>
             )}
-            {current === 10 && score <= 7 && (
+            {current === 5 && score <= 3 && (
               <div className="end-quiz">
                 <p>Palihog pagsulit liwat.</p>
                 <p>
                   Nakakuha ka sang iskor nga <strong>{score}</strong>
                 </p>
                 <button onClick={() => window.location.reload()}>
-                  Try Again
+                  Pagsulit liwat
                 </button>
               </div>
             )}

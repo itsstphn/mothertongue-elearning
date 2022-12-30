@@ -162,12 +162,12 @@ const Quiz = () => {
             )}
             {current === 10 && score < 7 && (
               <div className="end-quiz">
-                <p>Please try again!</p>
+                <p>Palihog pagsulit liwat.</p>
                 <p>
-                  Your score is <strong>{score}</strong>
+                  Nakakuha ka sang iskor nga <strong>{score}</strong>
                 </p>
                 <button onClick={() => window.location.reload()}>
-                  Try Again
+                  Pagsulit liwat
                 </button>
               </div>
             )}
