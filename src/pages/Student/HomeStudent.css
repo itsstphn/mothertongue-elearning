@@ -74,10 +74,6 @@
     cover;
 }
 
-.HomeStudent .tab-item:hover:not(.active) p {
-  font-size: 2rem;
-}
-
 /* .HomeStudent .tab-item.active {
   background-color: #335a17;
   border-radius: 10px;

@@ -9,6 +9,10 @@
   background-image: url("../../assets/images/numero-lesson-bg.jpg");
 }
 
+.letra-bg {
+  background-image: url("../../assets/images/letra-lesson-bg.jpg");
+}
+
 .LessonVoiceover .card-content {
   padding: 2rem;
   display: grid;
@@ -49,7 +53,7 @@
 }
 
 .LessonVoiceover .description {
-  width: 120px;
+  width: 150px;
   /* height: 40px; */
   display: grid;
   place-items: center;
@@ -59,6 +63,10 @@
 
 .LessonVoiceover .description p {
   color: #fff;
+  /* word-break: break-all; */
+  white-space: normal;
+  width: 140px;
+  /* font-size: 0.8rem; */
   user-select: none;
 }
 
@@ -127,7 +135,7 @@
   }
 
   .LessonVoiceover .description p {
-    white-space: nowrap;
+    /* white-space: nowrap; */
   }
 
   .LessonVoiceover .player {

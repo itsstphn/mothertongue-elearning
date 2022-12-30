@@ -3,10 +3,12 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { useSignout } from "../hooks/useSignout";
+import { useUserDataContext } from "../hooks/useUserDataContext";
 
 const NavBar = () => {
   const { user } = useAuthContext();
-  console.log(user);
+  const { name } = useUserDataContext();
+  console.log("name", name?.firstName);
 
   const { signout } = useSignout();
 
@@ -27,7 +29,7 @@ const NavBar = () => {
           </ul>
           {user && (
             <div className="user">
-              <h3>{user && user.displayName}</h3>
+              <h3>{name?.firstName}</h3>
               <button onClick={handleSignout} className="logout-btn">
                 Signout
               </button>

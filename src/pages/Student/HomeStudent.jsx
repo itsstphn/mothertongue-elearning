@@ -84,13 +84,13 @@ const HomeStudent = () => {
 
   // console.log("user is", user);
 
-  useEffect(() => {
-    activeTab === "numero"
-      ? setActiveCategory(numero)
-      : setActiveCategory(letra);
-  }, [activeTab]);
+  // useEffect(() => {
+  //   activeTab === "numero"
+  //     ? setActiveCategory(numero)
+  //     : setActiveCategory(letra);
+  // }, [activeTab]);
 
-  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState([]);
 
   console.log("screen is:", window.screen.width);
 
@@ -104,7 +104,7 @@ const HomeStudent = () => {
                 onClick={() => {
                   navigate("/numero-levels");
                 }}
-                className={`tab-item ${activeTab === "numero" && "active"}`}
+                className={`tab-item `}
               >
                 <p>Numero</p>
                 <div className="illustration numero"></div>
@@ -113,22 +113,13 @@ const HomeStudent = () => {
             <Card>
               <div
                 onClick={() => {
-                  setActiveTab("letra");
+                  // setActiveTab("letra");
+                  navigate("/letra-levels");
                 }}
-                className={`tab-item ${activeTab === "letra" && "active"}`}
+                className={`tab-item`}
               >
                 <p>Letra</p>
                 <div className="illustration letra"></div>
-              </div>
-            </Card>
-            <Card>
-              <div
-                // onClick={() => {
-                //   setActiveTab("tinaga");
-                // }}
-                className={`tab-item ${activeTab === "tinaga" && "active"}`}
-              >
-                <p>Tinaga</p>
               </div>
             </Card>
           </div>

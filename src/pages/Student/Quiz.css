@@ -5,17 +5,60 @@
 }
 
 .Quiz .card-container {
-  width: 500px;
-  height: 500px;
+  /* width: 500px;
+  height: 500px; */
   overflow: hidden;
 }
 
 .Quiz .card-content {
   border-radius: 20px;
-  background: url("../../assets/images/mary.jpg") no-repeat center bottom /
-    cover;
   height: 100%;
   width: 100%;
+}
+
+.Quiz .card-content h2 {
+  margin: 1.5rem 0;
+}
+
+.Quiz .choices-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.Quiz .choice {
+  width: 30px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  background-color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.Quiz .choice.clicked-correct {
+  background: green;
+  color: white;
+}
+
+.Quiz .choice.clicked-wrong {
+  background: red;
+  color: white;
+}
+
+.Quiz .end-quiz {
+  margin: 1.5rem 0;
+}
+
+.Quiz .end-quiz button {
+  padding: 0.7rem;
+  border: none;
+  background-color: green;
+  color: white;
+  margin-top: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 700px) {

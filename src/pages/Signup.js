@@ -48,8 +48,8 @@ const Signup = () => {
         <label>
           <p className="label-text">Email</p>
           <input
-            autocorrect="off"
-            autocapitalize="none"
+            autoCorrect="off"
+            autoCapitalize="none"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"

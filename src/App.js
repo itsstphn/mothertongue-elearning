@@ -13,6 +13,8 @@ import Home from "./pages/Home";
 import LessonVoiceover from "./pages/Student/LessonVoiceover";
 import Quiz from "./pages/Student/Quiz";
 import NumeroLevels from "./pages/Student/NumeroLevels";
+import LetraLevels from "./pages/Student/LetraLevels";
+import LetraQuiz from "./pages/Student/LetraQuiz";
 
 function App() {
   const { user, userType, authIsReady } = useAuthContext();
@@ -43,6 +45,11 @@ function App() {
               ></Route>
 
               <Route
+                path="/letra-levels"
+                element={<LetraLevels></LetraLevels>}
+              ></Route>
+
+              <Route
                 path="/:category/:subCategory"
                 element={<LessonVoiceover></LessonVoiceover>}
               ></Route>
@@ -50,6 +57,11 @@ function App() {
               <Route
                 path="/:category/:subCategory/quiz"
                 element={<Quiz></Quiz>}
+              ></Route>
+
+              <Route
+                path="/letra/:subCategory/quiz"
+                element={<LetraQuiz></LetraQuiz>}
               ></Route>
 
               <Route

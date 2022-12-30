@@ -1,4 +1,10 @@
-import { doc, getDoc } from "firebase/firestore";
+import {
+  arrayUnion,
+  doc,
+  getDoc,
+  onSnapshot,
+  updateDoc,
+} from "firebase/firestore";
 import { createContext, useEffect } from "react";
 import { useReducer, useState } from "react";
 import { db } from "../firebase/config";
@@ -29,24 +35,58 @@ export const UserDataContextProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    (async () => {
-      if (user) {
-        const docRef = doc(db, "users", user.uid);
-        const response = await getDoc(docRef);
-        const progress = response.data().progress;
-        const firstName = response.data().firstName;
-        const lastName = response.data().lastName;
+    if (!user) return;
+    const docRef = doc(db, "users", user.uid);
+    const unsub = onSnapshot(docRef, (response) => {
+      const progress = response.data().progress;
+      const firstName = response.data().firstName;
+      const lastName = response.data().lastName;
 
-        console.log("progress is:", progress);
-        dispatch({ type: "SET_NAME", payload: { firstName, lastName } });
-        dispatch({ type: "SET_PROGRESS", payload: progress });
-        dispatch({ type: "USERDATA_IS_READY" });
-      }
-    })();
+      console.log("progress is:", progress);
+      dispatch({ type: "SET_NAME", payload: { firstName, lastName } });
+      dispatch({ type: "SET_PROGRESS", payload: progress });
+      dispatch({ type: "USERDATA_IS_READY" });
+    });
+
+    return () => unsub();
+
+    // (async () => {
+    //   if (user) {
+    //     const response = await getDoc(docRef);
+    //     const progress = response.data().progress;
+    //     const firstName = response.data().firstName;
+    //     const lastName = response.data().lastName;
+
+    //     console.log("progress is:", progress);
+    //     dispatch({ type: "SET_NAME", payload: { firstName, lastName } });
+    //     dispatch({ type: "SET_PROGRESS", payload: progress });
+    //     dispatch({ type: "USERDATA_IS_READY" });
+    //   }
+    // })();
   }, [user]);
 
+  const updateProgress = async (category, value) => {
+    const progressRef = doc(db, "users", user.uid);
+
+    try {
+      if (category === "numero") {
+        await updateDoc(progressRef, {
+          "progress.numero": arrayUnion(value),
+        });
+      }
+
+      if (category === "letra") {
+        await updateDoc(progressRef, {
+          "progress.letra": arrayUnion(value),
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
-    <UserDataContext.Provider value={{ ...state, dispatch }}>
+    <UserDataContext.Provider value={{ ...state, dispatch, updateProgress }}>
       {children}
     </UserDataContext.Provider>
   );

@@ -7,6 +7,8 @@ import HomeTeacher from "./Teacher/HomeTeacher";
 const Home = () => {
   const { userType, authIsReady } = useAuthContext();
 
+  console.log("usertype", userType);
+
   return (
     <>
       {authIsReady && (

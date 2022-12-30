@@ -1,10 +1,7 @@
 import React from "react";
-import { useContext } from "react";
-import { UserDataContext } from "../../context/UserDataContext";
 import { lessons } from "../../data/lesson-data";
 import "./NumeroLevels.css";
 import { MdLock } from "react-icons/md";
-import { useAuthContext } from "./../../hooks/useAuthContext";
 import { useUserDataContext } from "../../hooks/useUserDataContext";
 import { useNavigate } from "react-router-dom";
 

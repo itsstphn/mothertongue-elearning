@@ -1,0 +1,70 @@
+.LetraLevels {
+  background-color: var(--light-green);
+  padding: 5px;
+}
+
+.LetraLevels .container {
+  margin: 0 auto;
+  margin-top: 10px;
+  border: 5px solid white;
+  position: relative;
+  width: 350px;
+  height: 870px;
+  background: url("../../assets/images/letra-bg.jpeg") no-repeat center center/
+    cover;
+}
+
+.LetraLevels .level-header#level-header {
+  background: url("../../assets/images/letra-header-bg.png") no-repeat center
+    center / contain;
+  margin-top: 10px;
+  margin-left: 100px;
+  display: grid;
+  width: 150px;
+  height: 70px;
+  place-items: center;
+}
+
+.LetraLevels .level-header#level-header span {
+  font-size: 24px;
+}
+
+.LetraLevels .level--A-E {
+  margin-top: 150px;
+  margin-left: 70px;
+}
+
+.LetraLevels .level--G-M {
+  margin-top: 240px;
+  margin-left: 150px;
+}
+
+.LetraLevels .level--N-R {
+  margin-top: 340px;
+  margin-left: 90px;
+}
+
+.LetraLevels .level--S-Y {
+  margin-top: 450px;
+  margin-left: 170px;
+}
+
+.LetraLevels [class^="level"] {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  background: url("../../assets/images/letra-level-bg.png") no-repeat center
+    center / contain;
+  width: 110px;
+  height: 55px;
+  user-select: none;
+}
+
+.LetraLevels [class^="level"]:active:not([class^="level-header"]) {
+  scale: 1.1;
+}
+
+.LetraLevels [class^="level"] span {
+  font-weight: bold;
+  color: white;
+}

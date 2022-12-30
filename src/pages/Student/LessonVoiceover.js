@@ -22,13 +22,28 @@ const LessonVoiceover = () => {
 
   const navigate = useNavigate();
 
-  console.log("lessons:", lessons);
+  console.log("sub", lessons);
+
+  console.log("lessons:", lessons[category]);
 
   const { dataList } = lessons[category].find(
     (item) => item.category === subCategory
   );
 
-  console.log("subCategory", subCategory);
+  // const topicsArray = [...dataList.map((item) => item.topic)];
+
+  // const shuffledtopicsArray = topicsArray.sort((a, b) => 0.5 - Math.random());
+  // console.log("shuffled topics", shuffledtopicsArray);
+
+  // const descArray = [...dataList.map((item) => item.description)];
+
+  // console.log("topicsarrray", topicsArray);
+
+  // console.log("desc", descArray);
+
+  // console.log("datalist", dataList);
+
+  // console.log("subCategory", subCategory);
 
   return (
     <div
@@ -48,7 +63,7 @@ const LessonVoiceover = () => {
               <div className="topic">
                 <img
                   className="topic-img"
-                  src={require(`../../assets/images/numero/${subCategory}/${item.topic}.png`)}
+                  src={require(`../../assets/images/${category}/${subCategory}/${item.topic}.png`)}
                   alt=""
                 />
               </div>
