@@ -41,27 +41,53 @@ function App() {
 
               <Route
                 path="/numero-levels"
-                element={<NumeroLevels></NumeroLevels>}
+                element={
+                  user ? (
+                    <NumeroLevels></NumeroLevels>
+                  ) : (
+                    <Navigate to="/login-as"></Navigate>
+                  )
+                }
               ></Route>
 
               <Route
                 path="/letra-levels"
-                element={<LetraLevels></LetraLevels>}
+                element={
+                  user ? (
+                    <LetraLevels></LetraLevels>
+                  ) : (
+                    <Navigate to="/login-as"></Navigate>
+                  )
+                }
               ></Route>
 
               <Route
                 path="/:category/:subCategory"
-                element={<LessonVoiceover></LessonVoiceover>}
+                element={
+                  user ? (
+                    <LessonVoiceover></LessonVoiceover>
+                  ) : (
+                    <Navigate to="/login-as"></Navigate>
+                  )
+                }
               ></Route>
 
               <Route
                 path="/:category/:subCategory/quiz"
-                element={<Quiz></Quiz>}
+                element={
+                  user ? <Quiz></Quiz> : <Navigate to="/login-as"></Navigate>
+                }
               ></Route>
 
               <Route
                 path="/letra/:subCategory/quiz"
-                element={<LetraQuiz></LetraQuiz>}
+                element={
+                  user ? (
+                    <LetraQuiz></LetraQuiz>
+                  ) : (
+                    <Navigate to="/login-as"></Navigate>
+                  )
+                }
               ></Route>
 
               <Route
