@@ -45,8 +45,10 @@ const HomeTeacher = () => {
 
   useEffect(() => {
     const studentData = [];
+    if (students.length === 0) return;
     students.forEach((item) => {
       const name = item.firstName + " " + item.lastName;
+      console.log(item);
       const score = {
         letra: addNumbers(item?.scores?.letra),
         numero: addNumbers(item?.scores?.numero),

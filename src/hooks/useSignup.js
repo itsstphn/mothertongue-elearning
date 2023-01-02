@@ -33,9 +33,9 @@ export const useSignup = () => {
           tinaga: ["A-E"],
         },
         scores: {
-          numero: null,
-          letra: null,
-          tinaga: null,
+          numero: {},
+          letra: {},
+          tinaga: {},
         },
       });
 
