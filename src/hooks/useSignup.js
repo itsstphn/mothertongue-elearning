@@ -22,7 +22,7 @@ export const useSignup = () => {
 
       await updateProfile(response.user, { displayName: firstName });
       const docRef = doc(db, "users", response.user.uid);
-      console.log(docRef);
+
       await setDoc(docRef, {
         userType: userType,
         firstName: firstName,
@@ -30,7 +30,12 @@ export const useSignup = () => {
         progress: {
           numero: ["1-10"],
           letra: ["A-E"],
-          tinaga: [],
+          tinaga: ["A-E"],
+        },
+        scores: {
+          numero: null,
+          letra: null,
+          tinaga: null,
         },
       });
 

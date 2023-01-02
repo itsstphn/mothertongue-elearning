@@ -22,10 +22,6 @@ const LessonVoiceover = () => {
 
   const navigate = useNavigate();
 
-  console.log("sub", lessons);
-
-  console.log("lessons:", lessons[category]);
-
   const { dataList } = lessons[category].find(
     (item) => item.category === subCategory
   );

@@ -18,6 +18,8 @@ const userDataReducer = (state, action) => {
       return { ...state, name: action.payload };
     case "SET_PROGRESS":
       return { ...state, progress: action.payload };
+    case "SET_SCORE":
+      return { ...state, scores: action.payload };
     case "USERDATA_IS_READY":
       return { ...state, userDataIsReady: true };
     default:
@@ -32,6 +34,7 @@ export const UserDataContextProvider = ({ children }) => {
     name: null,
     progress: null,
     userDataIsReady: false,
+    scores: null,
   });
 
   useEffect(() => {
@@ -41,10 +44,11 @@ export const UserDataContextProvider = ({ children }) => {
       const progress = response.data().progress;
       const firstName = response.data().firstName;
       const lastName = response.data().lastName;
+      const scores = response.data().scores;
 
-      console.log("progress is:", progress);
       dispatch({ type: "SET_NAME", payload: { firstName, lastName } });
       dispatch({ type: "SET_PROGRESS", payload: progress });
+      dispatch({ type: "SET_SCORE", payload: scores });
       dispatch({ type: "USERDATA_IS_READY" });
     });
 
@@ -80,13 +84,47 @@ export const UserDataContextProvider = ({ children }) => {
           "progress.letra": arrayUnion(value),
         });
       }
+
+      if (category === "tinaga") {
+        await updateDoc(progressRef, {
+          "progress.tinaga": arrayUnion(value),
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const updateScore = async (category, subCategory, value) => {
+    const scoreRef = doc(db, "users", user.uid);
+
+    try {
+      if (category === "numero") {
+        await updateDoc(scoreRef, {
+          [`scores.numero.${subCategory}`]: value,
+        });
+      }
+
+      if (category === "letra") {
+        await updateDoc(scoreRef, {
+          [`scores.letra.${subCategory}`]: value,
+        });
+      }
+
+      if (category === "tinaga") {
+        await updateDoc(scoreRef, {
+          [`scores.tinaga.${subCategory}`]: value,
+        });
+      }
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <UserDataContext.Provider value={{ ...state, dispatch, updateProgress }}>
+    <UserDataContext.Provider
+      value={{ ...state, dispatch, updateProgress, updateScore }}
+    >
       {children}
     </UserDataContext.Provider>
   );

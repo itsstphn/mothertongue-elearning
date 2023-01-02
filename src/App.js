@@ -19,7 +19,6 @@ import LetraQuiz from "./pages/Student/LetraQuiz";
 function App() {
   const { user, userType, authIsReady } = useAuthContext();
 
-  console.log(user);
   return (
     <BrowserRouter className="App">
       {authIsReady && (

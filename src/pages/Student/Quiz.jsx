@@ -15,9 +15,7 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const { category, subCategory } = useParams();
 
-  console.log("subcat", subCategory);
-
-  const { updateProgress } = useUserDataContext();
+  const { updateProgress, updateScore, scores } = useUserDataContext();
 
   const lesson = lessons[category].find(
     (cat) => cat.category === subCategory
@@ -43,8 +41,6 @@ const Quiz = () => {
   const shuffledDesc = useMemo(() => {
     return _.shuffle(descriptions);
   }, []);
-
-  console.log("topics", topics);
 
   // const shuffledTopics = _.shuffle(topics);
 
@@ -89,10 +85,6 @@ const Quiz = () => {
   //   lesson.filter((item) => item.description === shuffledDesc[0])[0]
   // );
 
-  console.log(score);
-  console.log("correct", clickedCorrect);
-  console.log("wrong", clickedWrong);
-
   const readyQna = questionGenerator();
 
   const currentQuestion = readyQna[current];
@@ -103,16 +95,12 @@ const Quiz = () => {
       setClickedWrong((prev) => [...prev.filter((item) => item !== topic)]);
       setScore((prev) => prev + 1);
       setClickedCorrect((prev) => [...prev, topic]);
-      console.log("correct!!");
     } else {
-      console.log("wrong!!!");
       setClickedWrong((prev) => [...prev, topic]);
     }
 
     setCurrent((prev) => prev + 1);
   };
-
-  console.log("current", current);
 
   const navigate = useNavigate();
 
@@ -127,6 +115,10 @@ const Quiz = () => {
     )
   ) {
     updateProgress(category, lessons[category][getNextLesson()]?.category);
+  }
+
+  if (current === 10) {
+    updateScore(category, subCategory, score);
   }
 
   return (

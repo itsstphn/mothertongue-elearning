@@ -20,16 +20,11 @@ const LetraQuiz = () => {
 
   const category = "letra";
 
-  console.log("subcat", subCategory);
-  console.log("cat", category);
-
-  const { updateProgress } = useUserDataContext();
+  const { updateProgress, updateScore } = useUserDataContext();
 
   const lesson = lessons[category].find(
     (cat) => cat.category === subCategory
   ).dataList;
-
-  console.log("lesson", lesson);
 
   const getNextLesson = () => {
     const nextLesson =
@@ -48,13 +43,9 @@ const LetraQuiz = () => {
 
   const topics = [...lesson.map((item) => item.topic)];
 
-  console.log("topics", topics);
-
   const shuffledUrl = useMemo(() => {
     return _.shuffle(urls);
   }, []);
-
-  console.log("shuffled", shuffledUrl);
 
   // const shuffledTopics = _.shuffle(topics);
 
@@ -93,13 +84,7 @@ const LetraQuiz = () => {
     return qnaSet;
   };
 
-  console.log(score);
-  console.log("correct", clickedCorrect);
-  console.log("wrong", clickedWrong);
-
   const readyQna = questionGenerator();
-
-  console.log(readyQna);
 
   const currentQuestion = readyQna[current];
 
@@ -109,16 +94,12 @@ const LetraQuiz = () => {
       setClickedWrong((prev) => [...prev.filter((item) => item !== topic)]);
       setScore((prev) => prev + 1);
       setClickedCorrect((prev) => [...prev, topic]);
-      console.log("correct!!");
     } else {
-      console.log("wrong!!!");
       setClickedWrong((prev) => [...prev, topic]);
     }
 
     setCurrent((prev) => prev + 1);
   };
-
-  console.log("current", current);
 
   const navigate = useNavigate();
 
@@ -135,9 +116,11 @@ const LetraQuiz = () => {
     updateProgress(category, lessons[category][getNextLesson()]?.category);
   }
 
-  console.log(currentQuestion?.question);
-
   //   console.log(current);
+
+  if (current === 5) {
+    updateScore(category, subCategory, score);
+  }
 
   return (
     <div className="Quiz">
@@ -185,7 +168,7 @@ const LetraQuiz = () => {
               <div className="end-quiz">
                 <p>Palihog pagsulit liwat.</p>
                 <p>
-                  Nakakuha ka sang iskor nga <strong>{score}</strong>
+                  Nakakuha ka sang iskor nga <strong>{score}/5</strong>
                 </p>
                 <button onClick={() => window.location.reload()}>
                   Pagsulit liwat

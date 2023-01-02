@@ -8,12 +8,9 @@ const CategoryList = ({ data, category }) => {
 
   const { progress, name } = useContext(UserDataContext);
 
-  progress !== null && console.log("progress is:", progress);
-
   // console.log("progress is", progress[numero]);
 
   // console.log(data);
-  console.log("cat", category);
 
   return (
     <div className="tab-content">

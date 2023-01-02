@@ -8,7 +8,6 @@ import { useUserDataContext } from "../hooks/useUserDataContext";
 const NavBar = () => {
   const { user } = useAuthContext();
   const { name } = useUserDataContext();
-  console.log("name", name?.firstName);
 
   const { signout } = useSignout();
 

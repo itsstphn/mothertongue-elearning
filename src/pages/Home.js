@@ -14,7 +14,7 @@ const Home = () => {
       {authIsReady && (
         <>
           {
-            userType === "teacher" ? (
+            userType && userType === "teacher" ? (
               <HomeTeacher></HomeTeacher>
             ) : (
               // userType === "student" ?

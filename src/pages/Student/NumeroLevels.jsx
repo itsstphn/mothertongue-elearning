@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 const NumeroLevels = () => {
   const { progress, userDataIsReady } = useUserDataContext();
-  progress !== null && console.log("progress: ", progress);
   const navigate = useNavigate();
 
   const handleLevelClick = (category) => {

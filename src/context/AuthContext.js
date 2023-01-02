@@ -35,7 +35,6 @@ export const AuthContextProvider = ({ children }) => {
         const docRef = doc(db, "users", user.uid);
         const response = await getDoc(docRef);
         const userType = response.data().userType;
-        console.log(userType);
         dispatch({ type: "SET_USERTYPE", payload: userType });
       }
 

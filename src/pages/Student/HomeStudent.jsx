@@ -80,8 +80,6 @@ const HomeStudent = () => {
 
   const { name } = useContext(UserDataContext);
 
-  name && console.log("name is:", name);
-
   // console.log("user is", user);
 
   // useEffect(() => {
@@ -91,8 +89,6 @@ const HomeStudent = () => {
   // }, [activeTab]);
 
   // const [items, setItems] = useState([]);
-
-  console.log("screen is:", window.screen.width);
 
   return (
     <div className="HomeStudent">

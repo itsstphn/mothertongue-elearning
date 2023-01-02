@@ -673,6 +673,17 @@ const lessons = {
       ],
     },
   ],
+  tinaga: [
+    {
+      category: "A-E",
+      dataList: [
+        {
+          topic: "A",
+          images: ["ADLAW", "AMU", "ARITOS", "ATIS"],
+        },
+      ],
+    },
+  ],
 };
 
 export { lessons };
