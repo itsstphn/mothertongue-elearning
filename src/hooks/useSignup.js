@@ -1,7 +1,7 @@
 import { auth, db } from "../firebase/config";
 import { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { addDoc, doc, setDoc } from "firebase/firestore";
+import { addDoc, arrayUnion, doc, setDoc, updateDoc } from "firebase/firestore";
 import { useAuthContext } from "./useAuthContext";
 
 export const useSignup = () => {
@@ -9,7 +9,14 @@ export const useSignup = () => {
   const [isPending, setIsPending] = useState(false);
   const { dispatch } = useAuthContext();
 
-  const signup = async (firstName, lastName, email, password, userType) => {
+  const signup = async (
+    firstName,
+    lastName,
+    email,
+    password,
+    userType,
+    teacher
+  ) => {
     setError(null);
     setIsPending(true);
 
@@ -23,24 +30,39 @@ export const useSignup = () => {
       await updateProfile(response.user, { displayName: firstName });
       const docRef = doc(db, "users", response.user.uid);
 
-      await setDoc(docRef, {
-        userType: userType,
-        firstName: firstName,
-        lastName: lastName,
-        progress: {
-          numero: ["1-10"],
-          letra: ["A-E"],
-          tinaga: ["A-E"],
-        },
-        scores: {
-          numero: {},
-          letra: {},
-          tinaga: {},
-        },
-      });
+      if (userType === "student") {
+        await setDoc(docRef, {
+          userType: userType,
+          firstName: firstName,
+          lastName: lastName,
+          progress: {
+            numero: ["1-10"],
+            letra: ["A-E"],
+            tinaga: ["A-E"],
+          },
+          scores: {
+            numero: {},
+            letra: {},
+            tinaga: {},
+          },
+          teacher,
+        });
+      }
+
+      if (userType === "teacher") {
+        await setDoc(docRef, {
+          userType: userType,
+          firstName: firstName,
+          lastName: lastName,
+        });
+
+        await updateDoc(doc(db, "teachers", "teachers"), {
+          teachers: arrayUnion(firstName + " " + lastName),
+        });
+      }
 
       dispatch({ type: "SIGNIN", payload: response.user });
-      if (userType === "admin") dispatch({ type: "USER_IS_ADMIN" });
+      // if (userType === "admin") dispatch({ type: "USER_IS_ADMIN" });
       setIsPending(false);
     } catch (error) {
       setError(error.message);

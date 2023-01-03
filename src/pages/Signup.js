@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Signup.css";
 import { useSignup } from "./../hooks/useSignup";
 import { Link } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("");
@@ -9,13 +11,30 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("student");
+  const [teacher, setTeacher] = useState("");
+  const [teachers, setTeachers] = useState([]);
 
   const { signup, error, isPending } = useSignup();
 
+  console.log(error);
+
+  console.log("teacher", teacher);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(firstName, lastName, email, password, userType);
+    signup(firstName, lastName, email, password, userType, teacher);
   };
+
+  useEffect(() => {
+    const fetchTeachers = async () => {
+      const teachers = await getDoc(doc(db, "teachers", "teachers"));
+      setTeachers(teachers.data().teachers);
+      setTeacher(teachers.data().teachers[0]);
+    };
+    fetchTeachers();
+  }, []);
+
+  console.log("teachers: ", teachers);
 
   return (
     <div className="signup-form">
@@ -74,6 +93,22 @@ const Signup = () => {
             <option value="teacher">Manunudlo</option>
           </select>
         </label>
+        {teachers && (
+          <label className="select-container">
+            Pili sang Maestra/Maestro
+            <select
+              disabled={userType !== "student"}
+              value={teacher}
+              onChange={(e) => setTeacher(e.target.value)}
+            >
+              {teachers?.map((item) => (
+                <option value={item} key={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
         <div>
           <button disabled={isPending} type="submit">
             Himo Account

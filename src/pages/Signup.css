@@ -13,13 +13,14 @@
   font-size: 2rem;
   text-align: center;
   color: var(--grey);
-  margin-bottom: 1rem;
+  /* margin-bottom: 0.5rem; */
+  margin-top: 1rem;
 }
 
 .signup-form form {
   display: flex;
   flex-direction: column;
-  height: 410px;
+  height: 500px;
   width: 350px;
   align-items: center;
   justify-content: center;

@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { useState } from "react";
+import { useUserDataContext } from "./../../hooks/useUserDataContext";
 
 function addNumbers(obj) {
   let sum = 0;
@@ -28,6 +29,10 @@ const HomeTeacher = () => {
   const [students, setStudents] = useState([]);
   const [studentScores, setStudentScores] = useState([]);
 
+  const { name } = useUserDataContext();
+
+  console.log(name.firstName, name.lastName);
+
   useEffect(() => {
     const fetchUsers = async () => {
       const data = [];
@@ -36,12 +41,16 @@ const HomeTeacher = () => {
         // doc.data() is never undefined for query doc snapshots
         data.push(doc.data());
       });
-      const filteredData = data.filter((item) => item.userType === "student");
+      const filteredData = data.filter(
+        (item) =>
+          item.userType === "student" &&
+          item.teacher === `${name.firstName} ${name.lastName}`
+      );
       setStudents(filteredData);
     };
 
     fetchUsers();
-  }, []);
+  }, [name]);
 
   useEffect(() => {
     const studentData = [];
