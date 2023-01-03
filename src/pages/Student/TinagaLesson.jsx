@@ -50,16 +50,16 @@ const TinagaLesson = () => {
       <div className="container">
         {/* <Card className="card"> */}
         <div className="card-content">
-          {dataList.map((item, index) => (
-            <div
-              key={item.topic}
-              className="list-item"
-              onClick={() => !audioNotReady && playAudio(item.url)}
-            >
+          {dataList.map((item) => (
+            <div key={item.topic} className="list-item">
               <div className="topic">{item.topic}</div>
               <div className="images">
-                {item.images.map((image) => (
-                  <div className="img-container">
+                {item.images.map((image, index) => (
+                  <div
+                    className="img-container"
+                    key={image}
+                    onClick={() => !audioNotReady && playAudio(item.url[index])}
+                  >
                     <img
                       src={require(`../../assets/images/tinaga/${subCategory}/${image}.jpg`)}
                       alt=""
