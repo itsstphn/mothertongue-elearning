@@ -83,12 +83,14 @@ const HomeTeacher = () => {
               <div>Pangalan</div>
               <div>Numero</div>
               <div>Letra</div>
+              <div>Tinaga</div>
             </div>
             {studentScores.map((item, index) => (
               <div className="row" key={index}>
                 <div>{item.name}</div>
                 <div>{item.score.numero}/100</div>
-                <div>{item.score.letra}/25</div>
+                <div>{item.score.letra}/20</div>
+                <div>{item.score.tinaga}/40</div>
               </div>
             ))}
           </div>

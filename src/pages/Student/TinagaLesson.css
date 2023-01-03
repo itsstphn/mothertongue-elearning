@@ -1,0 +1,155 @@
+.TinagaLesson {
+  padding: 2rem;
+  background: no-repeat center center / cover;
+  height: 100%;
+  width: 100vw;
+  background-image: url("../../assets/images/tinaga-bg.jpg");
+}
+
+.TinagaLesson .card-content {
+  padding: 2rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(5, 1fr);
+  width: 100%;
+  column-gap: 4rem;
+  /* row-gap: 1rem; */
+}
+
+.TinagaLesson .topic {
+  color: #ff1744;
+  display: grid;
+  place-items: center;
+  background-color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  height: 50px;
+  aspect-ratio: 1;
+  justify-self: center;
+  border-radius: 5px;
+  /* height: auto; */
+}
+
+.TinagaLesson .images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.TinagaLesson .images img {
+  width: 100%;
+  height: 100%;
+}
+
+.TinagaLesson .list-item {
+  /* display: flex; */
+  justify-content: center;
+  text-align: center;
+}
+
+.TinagaLesson .list-item p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* .TinagaLesson .topic {
+  display: grid;
+  place-items: center;
+} */
+
+.TinagaLesson .description {
+  width: 150px;
+  /* height: 40px; */
+  display: grid;
+  place-items: center;
+  background: url("../../assets/images/header-bg.png") no-repeat center center /
+    contain;
+}
+
+.TinagaLesson .description p {
+  color: #fff;
+  /* word-break: break-all; */
+  white-space: normal;
+  width: 140px;
+  /* font-size: 0.8rem; */
+  user-select: none;
+}
+
+.TinagaLesson .player {
+  width: 250px;
+}
+
+.TinagaLesson .player audio {
+  width: 242px;
+  height: 40px;
+}
+
+.TinagaLesson .test {
+  margin-bottom: -35px;
+  margin-top: 1rem;
+}
+
+.TinagaLesson .test button {
+  font-family: "Comic Neue", cursive;
+  background-color: var(--dark-grey);
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  height: 40px;
+  width: 300px;
+  cursor: pointer;
+}
+
+.TinagaLesson .test button:hover {
+  scale: 1.1;
+}
+
+@media only screen and (max-width: 1080px) {
+  .TinagaLesson .card-content {
+    padding: 1rem;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+    width: 100%;
+    column-gap: 4rem;
+    row-gap: 1rem;
+    max-height: 70vh;
+  }
+
+  .TinagaLesson .list-item {
+    max-width: 500px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    justify-content: unset;
+    margin-bottom: 1rem;
+  }
+
+  /* .TinagaLesson .topic {
+      width: 100%;
+    } */
+
+  .TinagaLesson .topic p {
+    font-size: 1.5rem;
+  }
+
+  .TinagaLesson .description {
+    margin-right: 1.5rem;
+  }
+
+  .TinagaLesson .description p {
+    /* white-space: nowrap; */
+  }
+
+  .TinagaLesson .player {
+    grid-column: 1 / span 2;
+  }
+
+  .TinagaLesson .test button:hover {
+    scale: unset;
+  }
+
+  .TinagaLesson .test button:active {
+    scale: 1.1;
+  }
+}

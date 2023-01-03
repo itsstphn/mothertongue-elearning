@@ -109,7 +109,6 @@ const HomeStudent = () => {
             <Card>
               <div
                 onClick={() => {
-                  // setActiveTab("letra");
                   navigate("/letra-levels");
                 }}
                 className={`tab-item`}
@@ -118,11 +117,19 @@ const HomeStudent = () => {
                 <div className="illustration letra"></div>
               </div>
             </Card>
+            <Card>
+              <div
+                onClick={() => {
+                  // setActiveTab("letra");
+                  navigate("/tinaga-levels");
+                }}
+                className={`tab-item`}
+              >
+                <p>Tinaga</p>
+                <div className="illustration letra"></div>
+              </div>
+            </Card>
           </div>
-          {/* <CategoryList
-              data={activeCategory}
-              category={activeTab}
-            ></CategoryList> */}
         </div>
       </div>
     </div>

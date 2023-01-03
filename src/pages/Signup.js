@@ -31,10 +31,17 @@ const Signup = () => {
       setTeachers(teachers.data().teachers);
       setTeacher(teachers.data().teachers[0]);
     };
-    fetchTeachers();
-  }, []);
+    if (userType === "student") fetchTeachers();
+  }, [userType]);
 
   console.log("teachers: ", teachers);
+
+  useEffect(() => {
+    if (userType === "teacher") {
+      setTeachers([]);
+    }
+    console.log("useEffect teacher has run");
+  }, [userType]);
 
   return (
     <div className="signup-form">
@@ -95,11 +102,11 @@ const Signup = () => {
         </label>
         {teachers && (
           <label className="select-container">
-            Pili sang Maestra/Maestro
+            <span>Pili sang Maestra/Maestro</span>
             <select
-              disabled={userType !== "student"}
               value={teacher}
               onChange={(e) => setTeacher(e.target.value)}
+              disabled={userType !== "student"}
             >
               {teachers?.map((item) => (
                 <option value={item} key={item}>

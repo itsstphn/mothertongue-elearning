@@ -681,6 +681,99 @@ const lessons = {
           topic: "A",
           images: ["ADLAW", "AMU", "ARITOS", "ATIS"],
         },
+        {
+          topic: "B",
+          images: ["BAKA", "BALAY", "BASO", "BOLA"],
+          quiz: [],
+        },
+        {
+          topic: "K",
+          images: ["KABAYO", "KAHOY", "KILAY", "KURING"],
+        },
+        {
+          topic: "D",
+          images: ["DAGAT", "DAHON", "DAMANG", "DULSE"],
+        },
+        {
+          topic: "E",
+          images: ["EKIS", "ELISI", "EMBUDO", "EROPLANO"],
+        },
+      ],
+    },
+    {
+      category: "G-M",
+      dataList: [
+        {
+          topic: "G",
+          images: ["GABI", "GATAS", "GOMA", "GUNTING"],
+        },
+        {
+          topic: "H",
+          images: ["HILAMON", "HUMAY", "HUSAY", "HABON"],
+        },
+        {
+          topic: "I",
+          images: ["IDIK", "IDO", "ILAGA", "ISDA"],
+        },
+        {
+          topic: "L",
+          images: ["LAPIS", "LATA", "LIBRO", "LISO"],
+        },
+        {
+          topic: "M",
+          images: ["MAIS", "MANI", "MANOK", "MUNYIKA"],
+        },
+      ],
+    },
+    {
+      category: "N-R",
+      dataList: [
+        {
+          topic: "N",
+          images: ["NANAY", "NOTA", "NUMERO"],
+        },
+        {
+          topic: "NG",
+          images: ["NGALAN", "NGANGA", "NGIPON"],
+        },
+        {
+          topic: "O",
+          images: ["OKRA", "ORASAN", "OSPITAL"],
+        },
+        {
+          topic: "P",
+          images: ["PAKA", "PAKPAK", "PALA", "PANA"],
+        },
+        {
+          topic: "R",
+          images: ["RADYO", "REGALO", "RELO"],
+        },
+      ],
+    },
+
+    {
+      category: "S-Y",
+      dataList: [
+        {
+          topic: "S",
+          images: ["SAGING", "SAPATOS", "SINGSING"],
+        },
+        {
+          topic: "T",
+          images: ["TALONG", "TANSAN", "TASA", "TATAY"],
+        },
+        {
+          topic: "U",
+          images: ["UBAS", "UHONG", "ULAN", "UTAN"],
+        },
+        {
+          topic: "W",
+          images: ["WALA", "WALO", "WASAY"],
+        },
+        {
+          topic: "Y",
+          images: ["YABI", "YAHONG", "YOYO", "YUHOM"],
+        },
       ],
     },
   ],

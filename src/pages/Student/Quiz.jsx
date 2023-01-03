@@ -90,7 +90,7 @@ const Quiz = () => {
   const currentQuestion = readyQna[current];
 
   const handleClickChoice = (topic) => {
-    if (score === 10) return;
+    if (current === 10) return;
     if (currentQuestion.answer === topic) {
       setClickedWrong((prev) => [...prev.filter((item) => item !== topic)]);
       setScore((prev) => prev + 1);

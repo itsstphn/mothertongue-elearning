@@ -15,6 +15,9 @@ import Quiz from "./pages/Student/Quiz";
 import NumeroLevels from "./pages/Student/NumeroLevels";
 import LetraLevels from "./pages/Student/LetraLevels";
 import LetraQuiz from "./pages/Student/LetraQuiz";
+import TinagaLevels from "./pages/Student/TinagaLevels";
+import TinagaLesson from "./pages/Student/TinagaLesson";
+import TinagaQuiz from "./pages/Student/TinagaQuiz";
 
 function App() {
   const { user, userType, authIsReady } = useAuthContext();
@@ -61,10 +64,32 @@ function App() {
               ></Route>
 
               <Route
+                path="/tinaga-levels"
+                element={
+                  user ? (
+                    <TinagaLevels></TinagaLevels>
+                  ) : (
+                    <Navigate to="/login-as"></Navigate>
+                  )
+                }
+              ></Route>
+
+              <Route
                 path="/:category/:subCategory"
                 element={
                   user ? (
                     <LessonVoiceover></LessonVoiceover>
+                  ) : (
+                    <Navigate to="/login-as"></Navigate>
+                  )
+                }
+              ></Route>
+
+              <Route
+                path="/tinaga/:subCategory"
+                element={
+                  user ? (
+                    <TinagaLesson></TinagaLesson>
                   ) : (
                     <Navigate to="/login-as"></Navigate>
                   )
@@ -83,6 +108,17 @@ function App() {
                 element={
                   user ? (
                     <LetraQuiz></LetraQuiz>
+                  ) : (
+                    <Navigate to="/login-as"></Navigate>
+                  )
+                }
+              ></Route>
+
+              <Route
+                path="/tinaga/:subCategory/quiz"
+                element={
+                  user ? (
+                    <TinagaQuiz></TinagaQuiz>
                   ) : (
                     <Navigate to="/login-as"></Navigate>
                   )
