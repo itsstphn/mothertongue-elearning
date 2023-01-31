@@ -1,9 +1,11 @@
 import _ from "lodash";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Card from "./../../components/ui/Card";
 import "./LessonVoiceover.css";
 import { lessons } from "../../data/lesson-data";
+import { Tooltip } from "@mui/material";
+import { TiArrowBackOutline } from "react-icons/ti";
 // import { nums10 } from "../../assets/images/numero/1-10";
 // import numeroLessonsBg from "../../assets/images/numero-lesson-bg.jpg";
 
@@ -41,6 +43,14 @@ const LessonVoiceover = () => {
 
   // console.log("subCategory", subCategory);
 
+  const [openTip, setOpenTip] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpenTip(false);
+    }, 6000);
+  }, []);
+
   return (
     <div
       className={`LessonVoiceover ${
@@ -49,6 +59,12 @@ const LessonVoiceover = () => {
     >
       <div className="container">
         {/* <Card className="card"> */}
+        <div className="back-container" onClick={() => navigate(-1)}>
+          <TiArrowBackOutline
+            size={35}
+            className="back-arrow"
+          ></TiArrowBackOutline>
+        </div>
         <div className="card-content">
           {dataList.map((item, index) => (
             <div
@@ -63,9 +79,16 @@ const LessonVoiceover = () => {
                   alt=""
                 />
               </div>
-              <div className="description">
-                <p>{item.description}</p>
-              </div>
+              <Tooltip
+                open={index === 0 ? openTip : false}
+                title="Pinduta para pamatian"
+                placement="top"
+                arrow
+              >
+                <div className="description">
+                  <p>{item.description}</p>
+                </div>
+              </Tooltip>
             </div>
           ))}
         </div>

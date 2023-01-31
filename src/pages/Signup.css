@@ -18,9 +18,10 @@
 }
 
 .signup-form form {
+  padding: 1.5rem 0;
   display: flex;
   flex-direction: column;
-  height: 500px;
+  min-height: 500px;
   width: 350px;
   align-items: center;
   justify-content: center;

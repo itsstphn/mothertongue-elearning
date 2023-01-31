@@ -15,7 +15,7 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const { category, subCategory } = useParams();
 
-  const { updateProgress, updateScore, scores } = useUserDataContext();
+  const { updateProgress, updateScore, recordQuiz } = useUserDataContext();
 
   const lesson = lessons[category].find(
     (cat) => cat.category === subCategory
@@ -119,6 +119,7 @@ const Quiz = () => {
 
   if (current === 10) {
     updateScore(category, subCategory, score);
+    recordQuiz(category, subCategory, score);
   }
 
   return (
@@ -147,6 +148,17 @@ const Quiz = () => {
                 <p>
                   Nakakuha ka sang iskor nga <strong>{score}/10</strong>
                 </p>
+
+                <div className="stars">
+                  <img
+                    src={
+                      score === 10
+                        ? require("../../assets/images/3-star.png")
+                        : require("../../assets/images/2-star.png")
+                    }
+                    alt=""
+                  />
+                </div>
                 <button onClick={() => handleClickNextLevel()}>
                   Padayun sa masunod nga lebel
                 </button>

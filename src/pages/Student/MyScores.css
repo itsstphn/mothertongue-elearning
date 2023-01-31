@@ -1,0 +1,17 @@
+.MyScores {
+  padding: 1rem;
+}
+
+.MyScores .back-arrow {
+  color: var(--grey);
+}
+
+.MyScores .back-container {
+  cursor: pointer;
+  padding: 2px 5px;
+  margin-top: -10px;
+  background-color: var(--light-green);
+  width: fit-content;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}

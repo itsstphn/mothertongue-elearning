@@ -1,9 +1,11 @@
 import _ from "lodash";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Card from "./../../components/ui/Card";
 import "./TinagaLesson.css";
 import { lessons } from "../../data/lesson-data";
+import { TiArrowBackOutline } from "react-icons/ti";
+import { Tooltip } from "@mui/material";
 
 const category = "tinaga";
 
@@ -45,26 +47,49 @@ const TinagaLesson = () => {
 
   // console.log("subCategory", subCategory);
 
+  const [openTip, setOpenTip] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpenTip(false);
+    }, 7000);
+  }, []);
+
   return (
     <div className="TinagaLesson">
       <div className="container">
         {/* <Card className="card"> */}
+        <div className="back-container" onClick={() => navigate(-1)}>
+          <TiArrowBackOutline
+            size={35}
+            className="back-arrow"
+          ></TiArrowBackOutline>
+        </div>
         <div className="card-content">
-          {dataList.map((item) => (
+          {dataList.map((item, letterIndex) => (
             <div key={item.topic} className="list-item">
               <div className="topic">{item.topic}</div>
               <div className="images">
                 {item.images.map((image, index) => (
-                  <div
-                    className="img-container"
+                  <Tooltip
+                    open={letterIndex === 0 && index === 0 ? openTip : false}
+                    title="Pinduta para pamatian"
+                    placement="top-end"
+                    arrow
                     key={image}
-                    onClick={() => !audioNotReady && playAudio(item.url[index])}
                   >
-                    <img
-                      src={require(`../../assets/images/tinaga/${subCategory}/${image}.jpg`)}
-                      alt=""
-                    />
-                  </div>
+                    <div
+                      className="img-container"
+                      onClick={() =>
+                        !audioNotReady && playAudio(item.url[index])
+                      }
+                    >
+                      <img
+                        src={require(`../../assets/images/tinaga/${subCategory}/${image}.jpg`)}
+                        alt=""
+                      />
+                    </div>
+                  </Tooltip>
                 ))}
               </div>
             </div>

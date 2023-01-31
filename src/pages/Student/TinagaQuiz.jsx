@@ -20,7 +20,7 @@ const TinagaQuiz = () => {
 
   const category = "tinaga";
 
-  const { updateProgress, updateScore } = useUserDataContext();
+  const { updateProgress, updateScore, recordQuiz } = useUserDataContext();
 
   const lesson = lessons[category].find(
     (cat) => cat.category === subCategory
@@ -138,6 +138,7 @@ const TinagaQuiz = () => {
 
   if (current === 10) {
     updateScore(category, subCategory, score);
+    recordQuiz(category, subCategory, score);
   }
 
   return (

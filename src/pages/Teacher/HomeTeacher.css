@@ -1,18 +1,26 @@
 .HomeTeacher {
-  padding: 4rem;
-  height: 450px;
+  padding: 3rem;
+  height: 100%;
+}
+
+.HomeTeacher .error-icon {
+  display: grid;
+  place-items: center;
+  height: 100px;
 }
 
 .HomeTeacher .container {
-  max-width: 1200px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .HomeTeacher .title-container {
   width: 350px;
   height: 70px;
+}
+
+.HomeTeacher .student-list {
+  margin: 0 auto;
 }
 
 .HomeTeacher .student-list h2 {
@@ -26,7 +34,7 @@
   background-color: var(--light-green);
   border-radius: 10px;
   padding: 0.5rem;
-  width: 600px;
+  width: 700px;
   margin: 1rem;
   font-weight: bold;
 }
@@ -67,6 +75,29 @@
   margin: 0.5rem;
   font-size: 1.3rem;
 }
+
+.HomeTeacher .tabpanel-content .section-header {
+}
+
+.HomeTeacher .tabpanel-content section {
+  margin-bottom: 1rem;
+}
+
+.HomeTeacher .tabpanel-content {
+  height: 100%;
+}
+
+.HomeTeacher .section-content {
+  padding: 10px;
+}
+
+.HomeTeacher .section-content.table {
+  max-height: 300;
+}
+
+/* .HomeTeacher .tabpanel-content::-webkit-scrollbar {
+  display: none;
+} */
 
 @media screen and (max-width: 778px) {
   .HomeTeacher {

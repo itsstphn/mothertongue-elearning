@@ -9,6 +9,8 @@ import { useUserDataContext } from "./../../hooks/useUserDataContext";
 
 import { HiSpeakerWave } from "react-icons/hi2";
 import { useEffect } from "react";
+import { RecordVoiceOver } from "@mui/icons-material";
+import { Tooltip } from "@mui/material";
 
 const LetraQuiz = () => {
   const [currentQuestionNumber, setCurrentQuestionNumber] = useState(0);
@@ -20,7 +22,7 @@ const LetraQuiz = () => {
 
   const category = "letra";
 
-  const { updateProgress, updateScore } = useUserDataContext();
+  const { updateProgress, updateScore, recordQuiz } = useUserDataContext();
 
   const lesson = lessons[category].find(
     (cat) => cat.category === subCategory
@@ -120,7 +122,16 @@ const LetraQuiz = () => {
 
   if (current === 5) {
     updateScore(category, subCategory, score);
+    recordQuiz(category, subCategory, score);
   }
+
+  const [openTip, setOpenTip] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOpenTip(false);
+    }, 10000);
+  }, []);
 
   return (
     <div className="Quiz">
@@ -132,10 +143,20 @@ const LetraQuiz = () => {
                 <h3>{currentQuestion?.title}</h3>
                 <h2>
                   Diin diri ang
-                  <HiSpeakerWave
-                    style={{ marginLeft: "1rem" }}
-                    onClick={() => new Audio(currentQuestion?.question).play()}
-                  ></HiSpeakerWave>
+                  <Tooltip
+                    open={openTip}
+                    title="Pinduta"
+                    placement="right-start"
+                    arrow
+                  >
+                    <div className="audio-container">
+                      <HiSpeakerWave
+                        onClick={() =>
+                          new Audio(currentQuestion?.question).play()
+                        }
+                      ></HiSpeakerWave>
+                    </div>
+                  </Tooltip>
                 </h2>
               </>
             )}

@@ -1,0 +1,68 @@
+.NewStudent {
+  padding: 2rem;
+  height: 400px;
+}
+
+.NewStudent .back-arrow {
+  color: var(--grey);
+}
+
+.NewStudent .back-container {
+  cursor: pointer;
+  padding: 2px 5px;
+  margin-top: -10px;
+  background-color: var(--light-green);
+  width: fit-content;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.NewStudent .card-content {
+  height: 100%;
+  width: 100%;
+}
+
+.NewStudent .header {
+  height: fit-content;
+  padding: 5px 10px;
+  border-bottom: 2px solid var(--grey);
+}
+
+.NewStudent .header h1 {
+  font-size: 20px;
+}
+
+.NewStudent .main {
+}
+
+.NewStudent .row {
+  display: flex;
+  padding: 0.5rem;
+}
+
+.NewStudent .row .name {
+  min-width: 300px;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.NewStudent .row .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.NewStudent .row .actions .btn {
+  cursor: pointer;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.NewStudent .row .actions .btn.accept {
+  background-color: green;
+}
+
+.NewStudent .row .actions .btn.decline {
+  background-color: red;
+}

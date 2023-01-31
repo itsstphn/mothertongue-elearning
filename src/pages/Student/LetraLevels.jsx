@@ -4,6 +4,7 @@ import "./LetraLevels.css";
 import { MdLock } from "react-icons/md";
 import { useUserDataContext } from "../../hooks/useUserDataContext";
 import { useNavigate } from "react-router-dom";
+import { TiArrowBackOutline } from "react-icons/ti";
 
 const LetraLevels = () => {
   const { progress, userDataIsReady } = useUserDataContext();
@@ -18,6 +19,12 @@ const LetraLevels = () => {
       {userDataIsReady && progress !== null && (
         <div className="LetraLevels">
           <div className="container">
+            <div className="back-container" onClick={() => navigate(-1)}>
+              <TiArrowBackOutline
+                size={35}
+                className="back-arrow"
+              ></TiArrowBackOutline>
+            </div>
             <div id="level-header" className="level-header">
               <span>Letra</span>
             </div>

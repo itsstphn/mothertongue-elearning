@@ -14,6 +14,23 @@
     cover;
 }
 
+.NumeroLevels .back-arrow {
+  color: var(--grey);
+}
+
+.NumeroLevels .back-container {
+  cursor: pointer;
+  padding: 2px 5px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  /* margin-top: -10px; */
+  /* background-color: var(--light-green); */
+  width: fit-content;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
 .NumeroLevels .level-header#level-header {
   background: url("../../assets/images/header-bg2.png") no-repeat center center /
     contain;

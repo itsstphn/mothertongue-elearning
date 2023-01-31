@@ -4,6 +4,7 @@ import "./NumeroLevels.css";
 import { MdLock } from "react-icons/md";
 import { useUserDataContext } from "../../hooks/useUserDataContext";
 import { useNavigate } from "react-router-dom";
+import { TiArrowBackOutline } from "react-icons/ti";
 
 const NumeroLevels = () => {
   const { progress, userDataIsReady } = useUserDataContext();
@@ -18,6 +19,12 @@ const NumeroLevels = () => {
       {userDataIsReady && progress !== null && (
         <div className="NumeroLevels">
           <div className="container">
+            <div className="back-container" onClick={() => navigate(-1)}>
+              <TiArrowBackOutline
+                size={35}
+                className="back-arrow"
+              ></TiArrowBackOutline>
+            </div>
             <div id="level-header" className="level-header">
               <span>Numero</span>
             </div>

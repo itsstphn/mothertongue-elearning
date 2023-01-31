@@ -1,13 +1,16 @@
 import React from "react";
 
 import { useAuthContext } from "../hooks/useAuthContext";
+import { useUserDataContext } from "../hooks/useUserDataContext";
 import HomeStudent from "./Student/HomeStudent";
 import HomeTeacher from "./Teacher/HomeTeacher";
 
 const Home = () => {
-  const { userType, authIsReady } = useAuthContext();
+  const { authIsReady } = useAuthContext();
 
-  console.log("usertype", userType);
+  const { userType } = useUserDataContext();
+
+  console.log("usertype userData", userType);
 
   return (
     <>

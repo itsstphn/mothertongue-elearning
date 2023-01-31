@@ -8,6 +8,7 @@ import CategoryList from "./../../layout/CategoryList";
 import { useAuthContext } from "./../../hooks/useAuthContext";
 import { UserDataContext } from "../../context/UserDataContext";
 import numeroBg from "../../assets/images/numero-kids.jpg";
+import PendingStudentScreen from "./PendingStudentScreen";
 
 // lessons.numero.map((item) => console.log(item));
 
@@ -78,7 +79,11 @@ const HomeStudent = () => {
 
   const { user } = useAuthContext();
 
-  const { name } = useContext(UserDataContext);
+  const { name, status, userType } = useContext(UserDataContext);
+
+  console.log(status);
+
+  console.log(userType);
 
   // console.log("user is", user);
 
@@ -90,50 +95,54 @@ const HomeStudent = () => {
 
   // const [items, setItems] = useState([]);
 
-  return (
-    <div className="HomeStudent">
-      <div className="container">
-        <div className="card-content">
-          <div className="tabs">
-            <Card>
-              <div
-                onClick={() => {
-                  navigate("/numero-levels");
-                }}
-                className={`tab-item `}
-              >
-                <p>Numero</p>
-                <div className="illustration numero"></div>
-              </div>
-            </Card>
-            <Card>
-              <div
-                onClick={() => {
-                  navigate("/letra-levels");
-                }}
-                className={`tab-item`}
-              >
-                <p>Letra</p>
-                <div className="illustration letra"></div>
-              </div>
-            </Card>
-            <Card>
-              <div
-                onClick={() => {
-                  // setActiveTab("letra");
-                  navigate("/tinaga-levels");
-                }}
-                className={`tab-item`}
-              >
-                <p>Tinaga</p>
-                <div className="illustration letra"></div>
-              </div>
-            </Card>
+  if (status === "pending") {
+    return <PendingStudentScreen></PendingStudentScreen>;
+  } else {
+    return (
+      <div className="HomeStudent">
+        <div className="container">
+          <div className="card-content">
+            <div className="tabs">
+              <Card>
+                <div
+                  onClick={() => {
+                    navigate("/numero-levels");
+                  }}
+                  className={`tab-item `}
+                >
+                  <p>Numero</p>
+                  <div className="illustration numero"></div>
+                </div>
+              </Card>
+              <Card>
+                <div
+                  onClick={() => {
+                    navigate("/letra-levels");
+                  }}
+                  className={`tab-item`}
+                >
+                  <p>Letra</p>
+                  <div className="illustration letra"></div>
+                </div>
+              </Card>
+              <Card>
+                <div
+                  onClick={() => {
+                    // setActiveTab("letra");
+                    navigate("/tinaga-levels");
+                  }}
+                  className={`tab-item`}
+                >
+                  <p>Tinaga</p>
+                  <div className="illustration letra"></div>
+                </div>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default HomeStudent;

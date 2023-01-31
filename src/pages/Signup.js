@@ -4,6 +4,14 @@ import { useSignup } from "./../hooks/useSignup";
 import { Link } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase/config";
+import moment from "moment/moment";
+
+const grado = [
+  { value: "kinder", name: "Kinder" },
+  { value: "grade-1", name: "Grade 1" },
+  { value: "grade-2", name: "Grade 2" },
+  { value: "grade-3", name: "Grade 3" },
+];
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("");
@@ -13,17 +21,46 @@ const Signup = () => {
   const [userType, setUserType] = useState("student");
   const [teacher, setTeacher] = useState("");
   const [teachers, setTeachers] = useState([]);
+  const [selectedGrado, setSelectedGrado] = useState(grado[0].value);
+  const [teacherIdNumber, setTeacherIdNumber] = useState("");
 
-  const { signup, error, isPending } = useSignup();
+  console.log(selectedGrado);
 
+  const { signupTeacher, signupStudent, error, isPending } = useSignup();
+
+  console.log("teacher", teacherIdNumber);
   console.log(error);
-
-  console.log("teacher", teacher);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(firstName, lastName, email, password, userType, teacher);
+
+    if (userType === "student") {
+      signupStudent(
+        firstName,
+        lastName,
+        email,
+        password,
+        userType,
+        teacher,
+        selectedGrado
+      );
+    }
+
+    if (userType === "teacher") {
+      signupTeacher(
+        firstName,
+        lastName,
+        email,
+        password,
+        userType,
+        teacherIdNumber
+      );
+    }
   };
+
+  const timestamp = moment("20230115", "YYYYMMDD").fromNow();
+
+  console.log(timestamp);
 
   useEffect(() => {
     const fetchTeachers = async () => {
@@ -110,10 +147,35 @@ const Signup = () => {
             >
               {teachers?.map((item) => (
                 <option value={item} key={item}>
-                  {item}
+                  {item.name}
                 </option>
               ))}
             </select>
+          </label>
+        )}
+        {userType === "student" && (
+          <label className="select-container">
+            <span>Pili grado</span>
+            <select
+              value={selectedGrado}
+              onChange={(e) => setSelectedGrado(e.target.value)}
+            >
+              {grado.map((item) => (
+                <option key={item.value} value={item.value}>
+                  {item.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
+        {userType === "teacher" && (
+          <label className="select-container">
+            <span>Teacher ID Number</span>
+            <input
+              type="text"
+              value={teacherIdNumber}
+              onChange={(e) => setTeacherIdNumber(e.target.value)}
+            />
           </label>
         )}
         <div>

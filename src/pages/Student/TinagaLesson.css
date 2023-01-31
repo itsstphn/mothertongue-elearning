@@ -4,6 +4,24 @@
   height: 100%;
   width: 100vw;
   background-image: url("../../assets/images/tinaga-bg.jpg");
+  position: relative;
+}
+
+.TinagaLesson .back-arrow {
+  color: var(--dark-grey);
+}
+
+.TinagaLesson .back-container {
+  cursor: pointer;
+  padding: 2px 5px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  /* margin-top: -10px; */
+  /* background-color: var(--light-green); */
+  width: fit-content;
+  margin-bottom: 1rem;
+  border-radius: 10px;
 }
 
 .TinagaLesson .card-content {

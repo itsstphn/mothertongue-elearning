@@ -9,6 +9,7 @@ import { createContext, useEffect } from "react";
 import { useReducer, useState } from "react";
 import { db } from "../firebase/config";
 import { useAuthContext } from "./../hooks/useAuthContext";
+import moment from "moment";
 
 export const UserDataContext = createContext();
 
@@ -22,6 +23,14 @@ const userDataReducer = (state, action) => {
       return { ...state, scores: action.payload };
     case "USERDATA_IS_READY":
       return { ...state, userDataIsReady: true };
+    case "SET_USERTYPE":
+      return { ...state, userType: action.payload };
+    case "SET_STATUS":
+      return { ...state, status: action.payload };
+    case "SET_QUIZHISTORY":
+      return { ...state, quizHistory: action.payload };
+    case "SET_TEACHER":
+      return { ...state, teacher: action.payload };
     default:
       return state;
   }
@@ -35,6 +44,10 @@ export const UserDataContextProvider = ({ children }) => {
     progress: null,
     userDataIsReady: false,
     scores: null,
+    quizHistory: null,
+    userType: null,
+    status: "pending",
+    teacher: null,
   });
 
   useEffect(() => {
@@ -45,11 +58,16 @@ export const UserDataContextProvider = ({ children }) => {
       const firstName = response.data().firstName;
       const lastName = response.data().lastName;
       const scores = response.data().scores;
+      const { userType, status, quizHistory, teacher } = response.data();
 
       dispatch({ type: "SET_NAME", payload: { firstName, lastName } });
       dispatch({ type: "SET_PROGRESS", payload: progress });
       dispatch({ type: "SET_SCORE", payload: scores });
+      dispatch({ type: "SET_USERTYPE", payload: userType });
       dispatch({ type: "USERDATA_IS_READY" });
+      dispatch({ type: "SET_STATUS", payload: status });
+      dispatch({ type: "SET_QUIZHISTORY", payload: quizHistory });
+      dispatch({ type: "SET_TEACHER", payload: teacher });
     });
 
     return () => unsub();
@@ -121,9 +139,31 @@ export const UserDataContextProvider = ({ children }) => {
     }
   };
 
+  const recordQuiz = async (category, subCategory, score) => {
+    const docRef = doc(db, "users", user.uid);
+
+    const getTime = moment().format("MMMM Do YYYY, h:mm a");
+
+    console.log("getTime", getTime);
+
+    try {
+      await updateDoc(docRef, {
+        quizHistory: arrayUnion({
+          quizType: category,
+          category: subCategory,
+          score,
+          timestamp: getTime,
+          dugangKomento: "",
+        }),
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <UserDataContext.Provider
-      value={{ ...state, dispatch, updateProgress, updateScore }}
+      value={{ ...state, dispatch, updateProgress, updateScore, recordQuiz }}
     >
       {children}
     </UserDataContext.Provider>

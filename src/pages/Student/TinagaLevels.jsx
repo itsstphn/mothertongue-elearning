@@ -4,6 +4,7 @@ import "./TinagaLevels.css";
 import { MdLock } from "react-icons/md";
 import { useUserDataContext } from "../../hooks/useUserDataContext";
 import { useNavigate } from "react-router-dom";
+import { TiArrowBackOutline } from "react-icons/ti";
 
 const TinagaLevels = () => {
   const { progress, userDataIsReady } = useUserDataContext();
@@ -20,6 +21,12 @@ const TinagaLevels = () => {
       {userDataIsReady && progress !== null && (
         <div className="TinagaLevels">
           <div className="container">
+            <div className="back-container" onClick={() => navigate(-1)}>
+              <TiArrowBackOutline
+                size={35}
+                className="back-arrow"
+              ></TiArrowBackOutline>
+            </div>
             <div id="level-header" className="level-header">
               <span>Tinaga</span>
             </div>

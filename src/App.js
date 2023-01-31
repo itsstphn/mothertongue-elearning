@@ -18,6 +18,8 @@ import LetraQuiz from "./pages/Student/LetraQuiz";
 import TinagaLevels from "./pages/Student/TinagaLevels";
 import TinagaLesson from "./pages/Student/TinagaLesson";
 import TinagaQuiz from "./pages/Student/TinagaQuiz";
+import NewStudent from "./pages/Teacher/NewStudent";
+import MyScores from "./pages/Student/MyScores";
 
 function App() {
   const { user, userType, authIsReady } = useAuthContext();
@@ -38,7 +40,24 @@ function App() {
 
               <Route
                 path="/student-home"
-                element={<HomeStudent></HomeStudent>}
+                element={
+                  user ? (
+                    <HomeStudent></HomeStudent>
+                  ) : (
+                    <Navigate to="/login-as"></Navigate>
+                  )
+                }
+              ></Route>
+
+              <Route
+                path="/my-scores"
+                element={
+                  user ? (
+                    <MyScores></MyScores>
+                  ) : (
+                    <Navigate to="/login-as"></Navigate>
+                  )
+                }
               ></Route>
 
               <Route
@@ -127,7 +146,24 @@ function App() {
 
               <Route
                 path="/teacher-home"
-                element={<HomeTeacher></HomeTeacher>}
+                element={
+                  user ? (
+                    <HomeTeacher></HomeTeacher>
+                  ) : (
+                    <Navigate to="/login-as"></Navigate>
+                  )
+                }
+              ></Route>
+
+              <Route
+                path="/new-student"
+                element={
+                  user ? (
+                    <NewStudent></NewStudent>
+                  ) : (
+                    <Navigate to="/login-as"></Navigate>
+                  )
+                }
               ></Route>
 
               <Route

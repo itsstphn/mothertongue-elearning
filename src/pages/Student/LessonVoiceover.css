@@ -3,6 +3,24 @@
   background: no-repeat center center / cover;
   height: 100%;
   width: 100vw;
+  position: relative;
+}
+
+.LessonVoiceover .back-arrow {
+  color: var(--light-green);
+}
+
+.LessonVoiceover .back-container {
+  cursor: pointer;
+  padding: 2px 5px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  /* margin-top: -10px; */
+  /* background-color: var(--light-green); */
+  width: fit-content;
+  margin-bottom: 1rem;
+  border-radius: 10px;
 }
 
 .numero-bg {
