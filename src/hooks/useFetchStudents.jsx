@@ -25,7 +25,7 @@ const useFetchStudents = () => {
         const filteredData = data.filter(
           (item) =>
             item.userType === "student" &&
-            item.teacher.name === `${name.firstName} ${name.lastName}` &&
+            item.teacher === `${name.firstName} ${name.lastName}` &&
             item.status === "enrolled"
         );
         setMyStudents(filteredData);
