@@ -28,7 +28,7 @@ const MyScores = () => {
         ></TiArrowBackOutline>
       </div>
       <Paper sx={{ padding: 2, marginBottom: 2 }}>
-        <strong>Teacher: {teacher && teacher.name}</strong>
+        <strong>Teacher: {teacher && teacher}</strong>
       </Paper>
       <TableContainer
         component={Paper}
