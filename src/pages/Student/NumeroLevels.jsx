@@ -19,7 +19,7 @@ const NumeroLevels = () => {
       {userDataIsReady && progress !== null && (
         <div className="NumeroLevels">
           <div className="container">
-            <div className="back-container" onClick={() => navigate(-1)}>
+            <div className="back-container" onClick={() => navigate("/")}>
               <TiArrowBackOutline
                 size={35}
                 className="back-arrow"

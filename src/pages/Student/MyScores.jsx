@@ -70,8 +70,8 @@ const MyScores = () => {
                     {row.quizType === "numero" ? "/10" : "/5"}
                   </TableCell>
                   <TableCell align="left">{row.timestamp}</TableCell>
-                  <TableCell sx={{ display: "flex" }} align="left">
-                    {row.dugangKomento}
+                  <TableCell align="left">
+                    <div style={{ display: "flex" }}>{row.dugangKomento}</div>
                   </TableCell>
                 </TableRow>
               ))}

@@ -91,10 +91,6 @@ function a11yProps(index) {
   };
 }
 
-function createData(pagtakos, score, petsa, komento) {
-  return { pagtakos, score, petsa, komento };
-}
-
 // const rows = [
 //   createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
 //   createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
@@ -313,6 +309,11 @@ const HomeTeacher = () => {
               minHeight: 380,
             }}
           >
+            {students.length === 0 && (
+              <div style={{ margin: "2rem" }}>
+                <h2>Wala estudyante na maipakita...</h2>
+              </div>
+            )}
             <Tabs
               orientation="vertical"
               variant="scrollable"
@@ -394,13 +395,13 @@ const HomeTeacher = () => {
                             {item.quizHistory.map((row, quizIndex) => (
                               <TableRow
                                 key={row.timestamp}
-                                sx={{
-                                  "&:last-child td, &:last-child th": {
-                                    border: 0,
-                                  },
-                                }}
+                                // sx={{
+                                //   "&:last-child td, &:last-child th": {
+                                //     border: 0,
+                                //   },
+                                // }}
                               >
-                                <TableCell component="th" scope="row">
+                                <TableCell>
                                   {_.capitalize(row.quizType)} ({row.category})
                                 </TableCell>
                                 <TableCell align="middle">
@@ -411,20 +412,22 @@ const HomeTeacher = () => {
                                   {row.timestamp}
                                 </TableCell>
                                 <TableCell
-                                  sx={{ display: "flex" }}
+                                  // sx={{ display: "flex" }}
                                   align="left"
                                 >
-                                  {row.dugangKomento}
-                                  <BorderColorIcon
-                                    onClick={() =>
-                                      handleClickOpen(studentIndex, quizIndex)
-                                    }
-                                    sx={{
-                                      marginLeft: "auto",
-                                      fontSize: 17,
-                                      cursor: "pointer",
-                                    }}
-                                  ></BorderColorIcon>
+                                  <div style={{ display: "flex" }}>
+                                    {row.dugangKomento}
+                                    <BorderColorIcon
+                                      onClick={() =>
+                                        handleClickOpen(studentIndex, quizIndex)
+                                      }
+                                      sx={{
+                                        marginLeft: "auto",
+                                        fontSize: 17,
+                                        cursor: "pointer",
+                                      }}
+                                    ></BorderColorIcon>
+                                  </div>
                                 </TableCell>
                               </TableRow>
                             ))}

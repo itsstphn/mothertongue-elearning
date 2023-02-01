@@ -146,7 +146,7 @@ const Signup = () => {
               disabled={userType !== "student"}
             >
               {teachers?.map((item) => (
-                <option value={item} key={item}>
+                <option value={item.name} key={item.userId}>
                   {item.name}
                 </option>
               ))}

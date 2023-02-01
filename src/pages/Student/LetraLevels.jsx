@@ -19,13 +19,13 @@ const LetraLevels = () => {
       {userDataIsReady && progress !== null && (
         <div className="LetraLevels">
           <div className="container">
-            <div className="back-container" onClick={() => navigate(-1)}>
+            <div className="back-container" onClick={() => navigate("/")}>
               <TiArrowBackOutline
                 size={35}
                 className="back-arrow"
               ></TiArrowBackOutline>
             </div>
-            <div id="level-header" className="level-header">
+            <div id="level-header" className="level-header"> 
               <span>Letra</span>
             </div>
             {lessons.letra.map((item) => (

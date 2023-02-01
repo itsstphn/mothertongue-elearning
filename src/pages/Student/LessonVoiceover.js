@@ -59,7 +59,14 @@ const LessonVoiceover = () => {
     >
       <div className="container">
         {/* <Card className="card"> */}
-        <div className="back-container" onClick={() => navigate(-1)}>
+        <div
+          className="back-container"
+          onClick={() =>
+            navigate(
+              `${category === "numero" ? "/numero-levels" : "/letra-levels"}`
+            )
+          }
+        >
           <TiArrowBackOutline
             size={35}
             className="back-arrow"
