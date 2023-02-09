@@ -365,13 +365,15 @@ const HomeTeacher = () => {
                                 sx={{ fontWeight: "bold" }}
                                 align="left"
                               >
-                                Dugang Komento
+                                Dugang nga buluhaton/Komento
                               </TableCell>
                             </TableRow>
                           </TableHead>
                           <TableBody>
                             <Dialog open={openEditForm} onClose={handleClose}>
-                              <DialogTitle>Dugang Komento</DialogTitle>
+                              <DialogTitle>
+                                Dugang nga buluhaton/Komento
+                              </DialogTitle>
                               <DialogContent sx={{ width: 500 }}>
                                 <TextField
                                   autoFocus

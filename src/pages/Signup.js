@@ -10,7 +10,6 @@ const grado = [
   { value: "kinder", name: "Kinder" },
   { value: "grade-1", name: "Grade 1" },
   { value: "grade-2", name: "Grade 2" },
-  { value: "grade-3", name: "Grade 3" },
 ];
 
 const Signup = () => {

@@ -103,6 +103,9 @@ const HomeStudent = () => {
         <div className="container">
           <div className="card-content">
             <div className="tabs">
+              <div className="title">
+                <h1>Kinder/Grade 1</h1>
+              </div>
               <Card>
                 <div
                   onClick={() => {

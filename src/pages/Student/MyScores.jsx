@@ -29,7 +29,7 @@ const MyScores = () => {
       </div>
       <Paper sx={{ padding: 2, marginBottom: 2 }}>
         <strong>Teacher: {teacher && teacher}</strong>
-      </Paper>
+      </Paper>{" "}
       <TableContainer
         component={Paper}
         sx={{ maxHeight: 500, backgroundColor: "#b3dec1" }}
@@ -46,8 +46,8 @@ const MyScores = () => {
               <TableCell sx={{ fontWeight: "bold" }} align="left">
                 Petsa
               </TableCell>
-              <TableCell sx={{ fontWeight: "bold" }} align="left">
-                Dugang Komento
+              <TableCell sx={{ fontWeight: "bold", fontSize: 12 }} align="left">
+                Dugang nga buluhaton/Komento
               </TableCell>
             </TableRow>
           </TableHead>
@@ -67,7 +67,7 @@ const MyScores = () => {
                   </TableCell>
                   <TableCell align="middle">
                     {row.score}
-                    {row.quizType === "numero" ? "/10" : "/5"}
+                    {row.quizType === "letra" ? "/5" : "/10"}
                   </TableCell>
                   <TableCell align="left">{row.timestamp}</TableCell>
                   <TableCell align="left">
