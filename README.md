@@ -20,7 +20,7 @@ Mother Tongue eLearning - Hiligaynon is an online platform designed to provide c
 ## How to Access the Platform
 
 1. Visit the website: [https://mothertongue-elearning.web.app/](https://mothertongue-elearning.web.app/)
-2. Create an Account: Click on the "Sign-Up" button and provide the required information to create an account.
+2. Create an Account: Click on the "Gusto ko Maghimo Account" button and provide the required information to create an account.
 3. Log in: Use your registered credentials to log in to the platform.
 4. Choose Your Course: Select the appropriate course based on your child's age and learning level.
 5. Start Learning: Access interactive lessons, complete quizzes, and immerse yourself in the beauty of Hiligaynon.
