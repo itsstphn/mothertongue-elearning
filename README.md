@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Mother Tongue eLearning - Hiligaynon
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="947" alt="mothertongue-elearning-1" src="https://github.com/itsstphn/mothertongue-elearning/assets/40314715/eda6eb15-986c-443e-a19c-de641f002d8a">
 
-## Available Scripts
+![mothertongue-elearning](https://github.com/itsstphn/mothertongue-elearning/assets/40314715/57401c68-0282-46b8-abd9-3f78a58195f5)
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+Mother Tongue eLearning - Hiligaynon is an online platform designed to provide children in Western Visayas with the opportunity to learn their native language, Hiligaynon, during the pandemic. With schools facing closures and disruptions, our platform aims to bridge the gap and continue fostering language development, cultural appreciation, and linguistic heritage among young learners.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Interactive Lessons: Engaging and interactive lessons designed to cater to different age groups and learning levels.
+- Multimedia Content: A rich collection of audio, visual, and interactive materials to enhance the learning experience.
+- Quizzes and Assessments: Regular quizzes and assessments to track progress and reinforce learning.
+- Cultural Integration: Learning materials and activities that integrate Hiligaynon culture and traditions.
+- User-Friendly Interface: Intuitive and easy-to-navigate interface for seamless learning.
 
-### `npm test`
+## How to Access the Platform
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Visit the website: [www.mothertongue-hiligaynon.com](https://www.mothertongue-hiligaynon.com)
+2. Create an Account: Click on the "Sign-Up" button and provide the required information to create an account.
+3. Log in: Use your registered credentials to log in to the platform.
+4. Choose Your Course: Select the appropriate course based on your child's age and learning level.
+5. Start Learning: Access interactive lessons, complete quizzes, and immerse yourself in the beauty of Hiligaynon.
 
-### `npm run build`
+## Contributing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+We welcome contributions from educators, linguists, and individuals passionate about preserving and promoting Hiligaynon. If you'd like to contribute to the platform's content, please follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Fork the repository from [GitHub](https://github.com/mothertongue-hiligaynon).
+2. Make your desired changes and improvements.
+3. Submit a pull request, detailing the changes you've made and their significance.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Support and Feedback
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you encounter any issues while using the platform or have feedback for improvement, please reach out to our support team at [support@mothertongue-hiligaynon.com](mailto:support@mothertongue-hiligaynon.com). We value your feedback and are committed to making the platform better.
