@@ -29,7 +29,7 @@ Mother Tongue eLearning - Hiligaynon is an online platform designed to provide c
 
 We welcome contributions from educators, linguists, and individuals passionate about preserving and promoting Hiligaynon. If you'd like to contribute to the platform's content, please follow these steps:
 
-1. Fork the repository from [GitHub](https://github.com/mothertongue-hiligaynon).
+1. Fork the repository from [GitHub](https://github.com/itsstphn/mothertongue-elearning).
 2. Make your desired changes and improvements.
 3. Submit a pull request, detailing the changes you've made and their significance.
 
