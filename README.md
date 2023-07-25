@@ -2,7 +2,8 @@
 
 <img width="947" alt="mothertongue-elearning-1" src="https://github.com/itsstphn/mothertongue-elearning/assets/40314715/eda6eb15-986c-443e-a19c-de641f002d8a">
 
-![mothertongue-elearning](https://github.com/itsstphn/mothertongue-elearning/assets/40314715/57401c68-0282-46b8-abd9-3f78a58195f5)
+<img width="300" alt="mothertongue-elearning-1" src="https://github.com/itsstphn/mothertongue-elearning/assets/40314715/57401c68-0282-46b8-abd9-3f78a58195f5">
+
 
 ## Overview
 
